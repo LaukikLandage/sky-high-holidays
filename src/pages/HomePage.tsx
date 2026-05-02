@@ -9,7 +9,6 @@ import { ServiceMarquee } from '../components/sections/ServiceMarquee';
 import { BrandIntro } from '../components/sections/BrandIntro';
 import { ServicesMarquee } from '../components/sections/ServicesMarquee';
 import { Testimonials } from '../components/sections/Testimonials';
-import { TravelStories } from '../components/sections/TravelStories';
 import { FAQ } from '../components/sections/FAQ';
 import { ScrollToTop } from '../components/ui/ScrollToTop';
 

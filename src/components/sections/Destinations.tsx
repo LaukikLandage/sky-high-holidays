@@ -11,8 +11,8 @@ export function Destinations() {
   const internationalDestinations = destinations.filter(d => d.type === 'international');
 
   return (
-    <section id="international" className="py-24 bg-[#F9F9F9]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="international" className="py-10 md:py-14 lg:py-16 bg-[#F9F9F9]">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader 
           subtitle="MOST LOVED DESTINATIONS"
           title="Explore The World's Most Popular Destinations"

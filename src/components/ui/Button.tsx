@@ -37,14 +37,13 @@ export interface ButtonProps
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asMotion = true, ...props }, ref) => {
     if (asMotion) {
-      const MotionButton = motion.button as React.ForwardRefExoticComponent<HTMLMotionProps<"button"> & React.RefAttributes<HTMLButtonElement>>;
       return (
-        <MotionButton
+        <motion.button
           className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          {...(props as any)}
+          {...(props as HTMLMotionProps<"button">)}
         />
       )
     }

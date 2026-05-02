@@ -72,8 +72,8 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-[#F9FAFB] font-poppins">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-10 md:py-14 lg:py-16 bg-[#F9FAFB] font-poppins">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -81,7 +81,7 @@ export function FAQ() {
             <HelpCircle className="w-4 h-4 text-[#FF7A00]" />
             <span className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Frequently Asked Questions</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-[#020617] tracking-tight leading-tight">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#020617] tracking-tight leading-tight">
             Everything You Need To Know <br />
             <span className="text-[#FF7A00]">Before You Travel</span>
           </h2>

@@ -3,8 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   MapPin, Clock, ChevronRight, ArrowLeft,
-  CheckCircle2, XCircle, ChevronDown, ChevronUp,
-  Plus, Minus
+  CheckCircle2, XCircle, ChevronDown, ChevronUp
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { useDestinationStore } from '@/store/useDestinationStore';
@@ -113,7 +112,7 @@ export function DestinationDetailPage() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pt-48 font-sans text-[#020617]">
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-6">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 mb-8 text-xs font-semibold uppercase tracking-widest text-gray-500">
           <Link to="/" className="hover:text-[#FF7A00] transition-colors">Home</Link>
@@ -124,7 +123,7 @@ export function DestinationDetailPage() {
         </div>
       </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-6 pt-12">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 pt-10 md:pt-14 lg:pt-16">
         {/* 2-COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 xl:gap-16 items-start">
           

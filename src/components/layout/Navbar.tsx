@@ -140,7 +140,7 @@ export function Navbar() {
       <header className="fixed top-0 left-0 w-full z-50">
         {/* Top Info Bar (Upper Strip) */}
         <div className="w-full bg-[#020617] text-white py-2.5 px-6 lg:px-10 border-b border-white/5">
-          <div className="max-w-7xl mx-auto flex justify-between items-center text-xs md:text-sm font-bold">
+          <div className="max-w-[1200px] mx-auto flex justify-between items-center text-xs md:text-sm font-bold">
             <div className="flex items-center gap-8">
               <a href="mailto:ashwin@skyhightravelandtourism.com" className="flex items-center gap-3 hover:text-[#FF7A00] transition-colors">
                 <Mail className="w-4 h-4 text-[#FF7A00]" />
@@ -171,7 +171,7 @@ export function Navbar() {
             isScrolled ? 'py-3 shadow-xl' : 'py-5 shadow-sm'
           }`}
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
+          <div className="max-w-[1200px] mx-auto px-6 lg:px-10 flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
               <img 

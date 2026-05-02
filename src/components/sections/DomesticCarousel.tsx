@@ -19,8 +19,8 @@ export function DomesticCarousel() {
   };
 
   return (
-    <section id="domestic" className="py-24 bg-white overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
+    <section id="domestic" className="py-10 md:py-14 lg:py-16 bg-white overflow-hidden relative">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader 
           subtitle="EXPLORE INDIA"
           title="Discover India"

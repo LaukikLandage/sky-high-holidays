@@ -58,8 +58,8 @@ export function Testimonials() {
   const displayTestimonials = [...testimonials, ...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="py-24 bg-white overflow-hidden relative">
-      <div className="max-w-7xl mx-auto px-6 mb-16">
+    <section id="testimonials" className="py-10 md:py-14 lg:py-16 bg-white overflow-hidden relative">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 mb-16">
         <SectionHeader 
           subtitle="TESTIMONIALS"
           title="Real Travel Stories From Our Customers"

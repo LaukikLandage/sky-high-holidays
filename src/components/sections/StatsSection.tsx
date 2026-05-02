@@ -1,4 +1,4 @@
-import { SectionHeader } from '../ui/SectionHeader';
+
 import { Counter } from '../ui/Counter';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';

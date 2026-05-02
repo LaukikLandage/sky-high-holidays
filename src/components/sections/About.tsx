@@ -12,8 +12,8 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" className="py-10 md:py-14 lg:py-16 bg-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeader 
           subtitle="WHO WE ARE"
           title="Crafting Extraordinary Travel Experiences Since 2015"
