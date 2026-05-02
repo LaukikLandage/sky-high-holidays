@@ -55,7 +55,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹1,24,999',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1559592441-696739992f5c?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
     type: 'international'
   }
@@ -149,7 +149,7 @@ export const DOMESTIC_DESTINATIONS = [
     price: '₹38,999',
     duration: '5 Days',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1610482215664-1a9193130d7b?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1540960309100-388960161494?auto=format&fit=crop&q=80&w=1200',
     type: 'domestic'
   },
   {
