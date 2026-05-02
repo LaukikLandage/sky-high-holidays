@@ -75,17 +75,17 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-sm md:text-base text-white/60 tracking-[0.25em] uppercase font-semibold mb-1"
+            className="hero-tagline text-sm md:text-base text-white/60 tracking-[0.25em] uppercase font-semibold mb-1"
           >
             Crafting Exceptional Travel Experiences Across the World
           </motion.p>
-
+          
           {/* Main Heading */}
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-3"
+            className="hero-title text-3xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-3"
           >
             Plan Your Dream <br className="hidden md:block" />
             Vacation Today
@@ -96,7 +96,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="text-base md:text-lg text-white/70 max-w-2xl leading-relaxed font-medium mb-4"
+            className="hero-description text-base md:text-lg text-white/70 max-w-2xl leading-relaxed font-medium mb-4"
           >
             From curated international escapes to seamless domestic getaways, we design personalized journeys with premium stays, visa assistance, and complete travel support.
           </motion.p>
@@ -106,7 +106,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
+            className="hero-buttons flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
           >
             <Link to="/destinations">
               <Button size="lg" className="h-14 px-10 text-sm md:text-base font-semibold uppercase tracking-widest bg-white text-black hover:bg-[#FF7A00] hover:text-white rounded-full shadow-2xl transition-all hover:scale-105 active:scale-95 group">
@@ -127,7 +127,7 @@ export function Hero() {
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 z-20"
+        className="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 z-20"
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
           <div className="w-1 h-2 bg-white/50 rounded-full"></div>
