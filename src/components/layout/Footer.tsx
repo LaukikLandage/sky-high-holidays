@@ -31,7 +31,7 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#FF7A00]/20 transition-colors">
                   <MapPin className="w-5 h-5 text-[#FF7A00]" />
                 </div>
-                <span className="leading-relaxed hover:text-[#FF7A00] transition-colors">
+                <span className="leading-relaxed hover:text-[#FF7A00] transition-colors break-words">
                   Shop no 5, near Diamond Bakery Lane, Fatima Nagar, Wanowrie, Pune, Maharashtra 411013
                 </span>
               </a>
@@ -47,7 +47,7 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#FF7A00]/20 transition-colors">
                   <Mail className="w-5 h-5 text-[#FF7A00]" />
                 </div>
-                <a href="mailto:ashwin@skyhightravelandtourism.com" className="hover:text-[#FF7A00] transition-colors font-medium">
+                <a href="mailto:ashwin@skyhightravelandtourism.com" className="hover:text-[#FF7A00] transition-colors font-medium break-all">
                   ashwin@skyhightravelandtourism.com
                 </a>
               </div>
