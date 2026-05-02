@@ -6,7 +6,7 @@ import { Textarea } from '../components/ui/Textarea';
 import { Select } from '../components/ui/Select';
 import { DestinationCard } from '../components/ui/DestinationCard';
 import { ServiceCard } from '../components/ui/ServiceCard';
-import { Plane, MapPin, Star, Shield, Layout, Palette, Type } from 'lucide-react';
+import { Plane, Star, Shield, Layout, Palette, Type } from 'lucide-react';
 import { DESTINATIONS } from '@/lib/constants';
 
 export function ComponentLibraryPage() {
@@ -58,11 +58,11 @@ export function ComponentLibraryPage() {
           <motion.section variants={item}>
             <SectionTitle icon={Palette} title="Color Palette" />
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-              <ColorBlock color="#111111" name="Primary Blue" hex="#111111" text="white" />
-              <ColorBlock color="#020617" name="Dark Navy" hex="#020617" text="white" />
-              <ColorBlock color="#FFC107" name="Accent Orange" hex="#FFC107" text="white" />
-              <ColorBlock color="#F3F4F6" name="Light Gray" hex="#F3F4F6" text="black" />
-              <ColorBlock color="#FFFFFF" name="White" hex="#FFFFFF" text="black" border />
+              <ColorBlock color="#111111" name="Primary Blue" hex="#111111" />
+              <ColorBlock color="#020617" name="Dark Navy" hex="#020617" />
+              <ColorBlock color="#FFC107" name="Accent Orange" hex="#FFC107" />
+              <ColorBlock color="#F3F4F6" name="Light Gray" hex="#F3F4F6" />
+              <ColorBlock color="#FFFFFF" name="White" hex="#FFFFFF" border />
             </div>
           </motion.section>
 
@@ -141,7 +141,17 @@ export function ComponentLibraryPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
               <div className="space-y-6 lg:col-span-1">
                 <span className="text-xs font-black text-gray-400 uppercase tracking-widest block">Destination Summary</span>
-                <DestinationCard destination={sampleDestination} />
+                <DestinationCard destination={{
+                  id: '1',
+                  name: 'Paris, France',
+                  slug: 'paris-france',
+                  location: 'Europe',
+                  price: '₹1,50,000',
+                  rating: 4.9,
+                  image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34',
+                  duration: '6 Days / 5 Nights',
+                  type: 'international'
+                } as any} />
               </div>
               <div className="space-y-6 lg:col-span-2">
                 <span className="text-xs font-black text-gray-400 uppercase tracking-widest block">Service Highlight</span>
@@ -173,7 +183,7 @@ function SectionTitle({ icon: Icon, title }: { icon: any, title: string }) {
   );
 }
 
-function ColorBlock({ color, name, hex, text, border }: { color: string, name: string, hex: string, text: string, border?: boolean }) {
+function ColorBlock({ color, name, hex, border }: { color: string, name: string, hex: string, border?: boolean }) {
   return (
     <div className="space-y-3 group cursor-pointer">
       <div 

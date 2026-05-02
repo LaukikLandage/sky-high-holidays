@@ -69,7 +69,7 @@ export function DestinationsPage() {
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredDestinations.map((destination, index) => (
+          {filteredDestinations.map((destination) => (
             <motion.div
               layout
               initial={{ opacity: 0, scale: 0.9 }}
@@ -79,7 +79,7 @@ export function DestinationsPage() {
               key={destination.name}
             >
               <Link to={`/international/${(destination as any).slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
-                <DestinationCard destination={destination} />
+                <DestinationCard destination={destination as any} />
               </Link>
             </motion.div>
           ))}

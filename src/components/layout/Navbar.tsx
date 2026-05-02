@@ -10,7 +10,7 @@ const SCROLL_SECTIONS = ['home', 'about', 'international', 'domestic', 'contact'
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('home');
+  const [activeSection, setActiveSection] = useState<string | null>('home');
   const { isMenuOpen, setIsMenuOpen } = useAppStore();
   const location = useLocation();
   const navigate = useNavigate();
@@ -122,7 +122,7 @@ export function Navbar() {
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
-      setActiveSection('home');
+      setActiveSection(null);
     }
     // For /about, /contact — let React Router handle normally
   }, [isHomePage, navigate]);

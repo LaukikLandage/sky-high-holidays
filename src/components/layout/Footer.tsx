@@ -152,11 +152,3 @@ function FooterLink({ to, children }: { to: string, children: React.ReactNode })
     </li>
   );
 }
-
-function PaymentBadge({ src, alt }: { src: string, alt?: string }) {
-  return (
-    <div className="bg-white/95 px-4 py-2 rounded-xl h-10 flex items-center justify-center border border-white/10 shadow-xl transition-all hover:scale-110 hover:-translate-y-1 cursor-pointer">
-      <img src={src} alt={alt || "Payment Method"} className="h-full w-auto max-w-[60px] object-contain" />
-    </div>
-  );
-}

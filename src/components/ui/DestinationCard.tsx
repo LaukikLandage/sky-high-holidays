@@ -7,10 +7,11 @@ export interface Destination {
   name: string;
   location: string;
   price: string;
-  rating: number;
+  rating?: number;
   image: string;
   duration: string;
   type?: 'international' | 'domestic';
+  slug?: string;
 }
 
 interface DestinationCardProps {
@@ -29,7 +30,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
       navigate(`/enquiry?destination=${encodeURIComponent(destination.name)}`);
     } else {
       // International goes to details page
-      const slug = (destination as any).slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      const slug = destination.slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
       console.log("Navigating to international:", slug);
       navigate(`/international/${slug}`);
     }
@@ -49,7 +50,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
         />
         <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
           <Star className="w-4 h-4 fill-[#FF7A00] text-[#FF7A00]" />
-          <span className="font-semibold text-sm">{destination.rating}</span>
+          <span className="font-semibold text-sm">{destination.rating || 4.9}</span>
         </div>
         <div className="absolute top-4 left-4 bg-[#020617] text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
           {destination.duration}

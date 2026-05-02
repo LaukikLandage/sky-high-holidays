@@ -17,7 +17,7 @@ import {
   ShieldAlert
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { useDestinationStore, Destination, ItineraryItem } from '@/store/useDestinationStore';
+import { useDestinationStore, Destination } from '@/store/useDestinationStore';
 
 export default function AdminEditDestination() {
   const { id } = useParams();
@@ -27,7 +27,7 @@ export default function AdminEditDestination() {
 
   const destination = isEdit ? destinations.find(d => d.id === id) : null;
 
-  const { register, control, handleSubmit, setValue, watch, reset } = useForm<Destination>({
+  const { register, control, handleSubmit, setValue, watch } = useForm<Destination>({
     defaultValues: destination || {
       id: Math.random().toString(36).substr(2, 9),
       name: '',
@@ -56,22 +56,22 @@ export default function AdminEditDestination() {
 
   const { fields: highlightFields, append: appendHighlight, remove: removeHighlight } = useFieldArray({
     control,
-    name: "highlights"
+    name: "highlights" as any
   });
 
   const { fields: inclusionFields, append: appendInclusion, remove: removeInclusion } = useFieldArray({
     control,
-    name: "inclusions"
+    name: "inclusions" as any
   });
 
   const { fields: exclusionFields, append: appendExclusion, remove: removeExclusion } = useFieldArray({
     control,
-    name: "exclusions"
+    name: "exclusions" as any
   });
 
   const onSubmit = (data: Destination) => {
     if (isEdit) {
-      updateDestination(id, data);
+      updateDestination(id!, data);
     } else {
       addDestination(data);
     }
@@ -87,7 +87,7 @@ export default function AdminEditDestination() {
 
   const [activeTab, setActiveTab] = useState('basic');
 
-  const TabButton = ({ id, label, icon: Icon }: any) => (
+  const TabButton = ({ id, label, icon: Icon }: { id: string, label: string, icon: any }) => (
     <button
       type="button"
       onClick={() => setActiveTab(id)}

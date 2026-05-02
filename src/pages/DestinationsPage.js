@@ -1,0 +1,30 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState, useMemo } from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { DESTINATIONS, DOMESTIC_DESTINATIONS } from '@/lib/constants';
+import { DestinationCard } from '../components/ui/DestinationCard';
+import { SectionHeader } from '../components/ui/SectionHeader';
+export function DestinationsPage() {
+    const [filter, setFilter] = useState('all');
+    const filteredDestinations = useMemo(() => {
+        const international = DESTINATIONS.map(d => ({ ...d, type: 'international' }));
+        // Map domestic to match the interface, using existing data from constants
+        const domestic = DOMESTIC_DESTINATIONS.map(d => ({
+            ...d,
+            type: 'domestic'
+        }));
+        const all = [...international, ...domestic];
+        if (filter === 'international')
+            return international;
+        if (filter === 'domestic')
+            return domestic;
+        return all;
+    }, [filter]);
+    return (_jsx("div", { className: "pt-48 pb-24 min-h-screen bg-[#F9F9F9]", children: _jsxs("div", { className: "max-w-7xl mx-auto px-6", children: [_jsxs(motion.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.6 }, className: "text-center mb-16", children: [_jsx(SectionHeader, { subtitle: "EXPLORE THE WORLD", title: "All Destinations" }), _jsx("p", { className: "text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed", children: "From the serene beaches of the Maldives to the snow-capped peaks of Kashmir, find your perfect getaway." }), _jsxs("div", { className: "flex flex-wrap justify-center gap-4", children: [_jsx(FilterButton, { active: filter === 'all', onClick: () => setFilter('all'), children: "All Packages" }), _jsx(FilterButton, { active: filter === 'international', onClick: () => setFilter('international'), children: "International" }), _jsx(FilterButton, { active: filter === 'domestic', onClick: () => setFilter('domestic'), children: "Domestic India" })] })] }), _jsx(motion.div, { layout: true, className: "grid md:grid-cols-2 lg:grid-cols-3 gap-8", children: filteredDestinations.map((destination, index) => (_jsx(motion.div, { layout: true, initial: { opacity: 0, scale: 0.9 }, animate: { opacity: 1, scale: 1 }, exit: { opacity: 0, scale: 0.9 }, transition: { duration: 0.4 }, children: _jsx(Link, { to: `/international/${destination.slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`, children: _jsx(DestinationCard, { destination: destination }) }) }, destination.name))) })] }) }));
+}
+function FilterButton({ active, onClick, children }) {
+    return (_jsx("button", { onClick: onClick, className: `px-6 py-2.5 rounded-full font-semibold transition-all duration-300 ${active
+            ? 'bg-[#000000] text-white shadow-lg scale-105'
+            : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'}`, children: children }));
+}
