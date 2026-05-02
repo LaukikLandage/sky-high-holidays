@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export function StatsSection() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.2,
+    threshold: 0.5,
   });
 
   const stats = [
@@ -42,11 +42,7 @@ export function StatsSection() {
             >
               <div className="relative inline-block">
                 <h3 className="text-4xl md:text-5xl font-black text-white mb-2">
-                  {stat.value === '24/7' ? (
-                    <span>{stat.value}</span>
-                  ) : (
-                    <Counter value={stat.value} />
-                  )}
+                  <Counter value={stat.value} start={inView} />
                 </h3>
                 {/* Underline Animation */}
                 <div className="h-1 w-0 bg-[#FFC107] mx-auto transition-all duration-500 group-hover:w-full rounded-full"></div>
