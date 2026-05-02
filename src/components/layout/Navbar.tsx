@@ -236,6 +236,14 @@ export function Navbar() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[60] bg-white pt-32 px-6 sm:px-10 flex flex-col gap-8"
           >
+            {/* Close Button Inside Menu */}
+            <button 
+              className="absolute top-8 right-6 p-2 text-[#020617] hover:bg-gray-100 rounded-xl transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X className="w-8 h-8" />
+            </button>
+
             <div className="flex flex-col gap-4 sm:gap-6">
               {navLinks.map((link) => {
                 const active = getIsActive(link.path);
