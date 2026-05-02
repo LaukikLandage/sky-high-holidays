@@ -1,0 +1,98 @@
+SKY HIGH HOLIDAYS - CMS DASHBOARD REQUIREMENTS
+
+This document outlines the necessary fields and structure for the future admin dashboard to manage travel destinations. The frontend is fully CMS-ready, ensuring that all content below can be managed dynamically.
+
+=========================================
+DESTINATION MANAGEMENT REQUIREMENTS
+=========================================
+Each destination should be editable from the dashboard.
+
+📌 BASIC INFO:
+- Destination Name
+- Slug (URL friendly)
+- Location
+- Duration (Days/Nights)
+- Price (INR)
+
+🖼️ IMAGES:
+- Cover Image (main banner)
+- Poster Image (card display)
+- Image Gallery (multiple images upload)
+
+📝 CONTENT:
+- Overview (rich text)
+- Highlights (bullet points)
+
+📅 ITINERARY:
+- Day-wise structure:
+  - Day number
+  - Title
+  - Description
+
+📌 INCLUSIONS:
+- List (editable items)
+
+📌 EXCLUSIONS:
+- List (editable items)
+
+📄 POLICIES:
+- Cancellation Policy
+- Payment Policy
+- Terms & Conditions
+
+📨 ENQUIRY SETTINGS:
+- Enable/disable enquiry form
+- Auto-fill destination name
+- Store user enquiries
+
+=========================================
+🧠 CMS FEATURES REQUIRED
+=========================================
+- Add / Edit / Delete destination
+- Upload & manage images
+- Rich text editor support
+- Dynamic form control
+- Live preview (optional)
+
+=========================================
+📊 DATABASE STRUCTURE (SUGGESTION)
+=========================================
+Destination Object:
+
+{
+  id,
+  name,
+  slug,
+  location,
+  duration,
+  price,
+  coverImage,
+  posterImage,
+  gallery: [],
+  overview,
+  itinerary: [],
+  inclusions: [],
+  exclusions: [],
+  cancellationPolicy,
+  paymentPolicy,
+  terms
+}
+
+=========================================
+⚙️ BACKEND SUGGESTION
+=========================================
+- Node.js + Express OR Firebase / Supabase
+- MongoDB (for flexible data)
+- Cloudinary (for image uploads)
+
+=========================================
+🎯 FINAL GOAL
+=========================================
+Make frontend fully CMS-ready so the owner can update:
+- Images
+- Pricing
+- Content
+- Itinerary
+- Policies
+
+WITHOUT changing code.
