@@ -28,7 +28,12 @@ export function Destinations() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="h-full"
             >
-              <Link to={`/international/${destination.slug}`} className="block h-full">
+              <Link 
+                to={destination.type === 'domestic' 
+                  ? `/enquiry?destination=${encodeURIComponent(destination.name)}`
+                  : `/international/${destination.slug}`} 
+                className="block h-full"
+              >
                 <DestinationCard destination={destination} />
               </Link>
             </motion.div>

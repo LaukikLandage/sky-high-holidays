@@ -78,7 +78,11 @@ export function DestinationsPage() {
               transition={{ duration: 0.4 }}
               key={destination.name}
             >
-              <Link to={`/international/${(destination as any).slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>
+              <Link 
+                to={destination.type === 'domestic'
+                  ? `/enquiry?destination=${encodeURIComponent(destination.name)}`
+                  : `/international/${(destination as any).slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+              >
                 <DestinationCard destination={destination as any} />
               </Link>
             </motion.div>
