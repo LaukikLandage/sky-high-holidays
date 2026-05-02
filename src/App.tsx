@@ -23,8 +23,6 @@ function ScrollToTop() {
   return null;
 }
 
-import { AeroplaneLoader } from './components/ui/AeroplaneLoader';
-
 function App() {
   return (
     <Router>
