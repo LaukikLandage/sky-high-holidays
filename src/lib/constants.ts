@@ -15,7 +15,7 @@ export const DESTINATIONS = [
     location: 'Middle East',
     price: '₹99,999',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea4e735c464?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?auto=format&fit=crop&q=80&w=1200',
     duration: '5 Days',
     type: 'international'
   },
