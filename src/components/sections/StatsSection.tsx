@@ -19,11 +19,11 @@ export function StatsSection() {
   return (
     <section ref={ref} className="py-24 bg-[#020617] border-y border-white/5 relative overflow-hidden">
       {/* Animated World Map Background */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-[0.08]">
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-[0.12] mix-blend-screen">
         <img 
           src="https://upload.wikimedia.org/wikipedia/commons/e/ec/World_Map_Blank.svg" 
           alt="" 
-          className="w-[150%] max-w-none animate-move-map grayscale invert brightness-200"
+          className="w-[120%] max-w-none animate-move-map grayscale invert brightness-[2]"
         />
       </div>
 
