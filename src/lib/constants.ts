@@ -119,7 +119,7 @@ export const DOMESTIC_DESTINATIONS = [
     price: '₹42,999',
     duration: '6 Days',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&q=80&w=1200',
     type: 'domestic'
   },
   {
