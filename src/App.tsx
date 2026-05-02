@@ -11,6 +11,7 @@ import { ComponentLibraryPage } from './pages/ComponentLibraryPage';
 
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminEditDestination from './pages/admin/AdminEditDestination';
+import { NotFound } from './pages/NotFound';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -19,6 +20,7 @@ function ScrollToTop() {
   }, [pathname]);
   return null;
 }
+
 
 function App() {
   return (
@@ -38,6 +40,9 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/add" element={<AdminEditDestination />} />
           <Route path="/admin/edit/:id" element={<AdminEditDestination />} />
+
+          {/* Fallback Route */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>

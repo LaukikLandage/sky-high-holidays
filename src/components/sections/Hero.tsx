@@ -37,25 +37,27 @@ export function Hero() {
       />
 
       {/* Background Videos (z-[1], above fallback image) */}
-      <div className="absolute inset-0 z-[1] bg-black">
-        {videos.map((video, idx) => (
-          !video.failed && (
-            <video 
-              key={video.src}
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              onError={() => video.setFailed(true)}
-              className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                videoIndex === idx ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <source src={video.src} type="video/mp4" />
-            </video>
-          )
-        ))}
-      </div>
+      {(!videoFailed1 || !videoFailed2) && (
+        <div className="absolute inset-0 z-[1] bg-black">
+          {videos.map((video, idx) => (
+            !video.failed && (
+              <video 
+                key={video.src}
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                onError={() => video.setFailed(true)}
+                className={`absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  videoIndex === idx ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <source src={video.src} type="video/mp4" />
+              </video>
+            )
+          ))}
+        </div>
+      )}
 
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10"></div>
