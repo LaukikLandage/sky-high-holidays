@@ -55,7 +55,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹1,24,999',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1525625239911-9881816742df?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1559592441-696739992f5c?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
     type: 'international'
   }
