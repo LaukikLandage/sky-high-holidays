@@ -76,9 +76,9 @@ export function WhyChooseUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="relative flex items-center justify-center"
+            className="relative flex items-center justify-center w-full overflow-visible"
           >
-            <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+            <div className="relative w-full max-w-[500px] aspect-square">
               {/* Glow effect behind globe */}
               <div className="absolute inset-0 bg-[#FF7A00]/10 rounded-full blur-[80px] scale-110 -z-10"></div>
               
@@ -97,7 +97,7 @@ export function WhyChooseUs() {
                 <img
                   src="/images/globe_white.png"
                   alt="3D Travel Globe"
-                  className="w-[90%] h-[90%] object-contain"
+                  className="w-[85%] h-[85%] object-contain"
                 />
               </motion.div>
 
@@ -107,7 +107,7 @@ export function WhyChooseUs() {
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               >
-                <div className="absolute top-[15%] left-[15%] text-4xl drop-shadow-lg -rotate-45">
+                <div className="absolute top-[15%] left-[15%] text-2xl md:text-4xl drop-shadow-lg -rotate-45">
                   ✈️
                 </div>
               </motion.div>
@@ -122,10 +122,10 @@ export function WhyChooseUs() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, type: "spring" }}
-                className="absolute bottom-4 right-4 bg-white rounded-2xl shadow-2xl p-5 text-center z-20 border border-gray-100"
+                className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-3 sm:p-5 text-center z-20 border border-gray-100"
               >
-                <div className="text-3xl font-black text-[#FF7A00] mb-0.5">98%</div>
-                <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">Satisfaction</div>
+                <div className="text-xl sm:text-3xl font-black text-[#FF7A00] mb-0.5">98%</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-widest">Satisfaction</div>
               </motion.div>
 
               {/* Floating destinations badge */}
@@ -134,10 +134,10 @@ export function WhyChooseUs() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="absolute top-4 left-4 bg-white rounded-2xl shadow-2xl p-5 text-center z-20 border border-gray-100"
+                className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-white rounded-xl sm:rounded-2xl shadow-2xl p-3 sm:p-5 text-center z-20 border border-gray-100"
               >
-                <div className="text-3xl font-black text-[#020617] mb-0.5">50+</div>
-                <div className="text-xs text-gray-500 font-bold uppercase tracking-widest">Destinations</div>
+                <div className="text-xl sm:text-3xl font-black text-[#020617] mb-0.5">50+</div>
+                <div className="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-widest">Destinations</div>
               </motion.div>
             </div>
           </motion.div>

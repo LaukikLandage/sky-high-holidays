@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ChevronRight } from 'lucide-react';
 import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa';
-import { DESTINATIONS } from '@/lib/constants';
 
 export function Footer() {
-  const instagramImages = DESTINATIONS.slice(0, 6).map(d => d.image);
 
   return (
     <footer className="bg-[#020617] text-white pt-24 pb-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         
         {/* Main Footer Grid */}
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 mb-20">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 mb-20">
           
           {/* Section 1: Brand & Contact */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="space-y-10">
             <Link to="/" className="inline-block">
               <img 
                 src="/logo.png" 
@@ -64,7 +62,7 @@ export function Footer() {
           </div>
 
           {/* Section 2: Links */}
-          <div className="lg:col-span-4 grid grid-cols-2 gap-8 md:gap-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-8 md:gap-16">
             <div className="space-y-8">
               <h3 className="text-lg font-bold uppercase tracking-[0.2em] text-white border-b border-white/10 pb-4 inline-block whitespace-nowrap">Quick Links</h3>
               <ul className="space-y-5">
@@ -86,20 +84,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Section 3: Instagram Grid */}
-          <div className="lg:col-span-4 space-y-8">
-            <h3 className="text-lg font-bold uppercase tracking-[0.2em] text-white border-b border-white/10 pb-4 inline-block whitespace-nowrap">Instagram Feed</h3>
-            <div className="grid grid-cols-3 gap-3">
-              {instagramImages.map((img, i) => (
-                <div key={i} className="aspect-square rounded-xl overflow-hidden group relative shadow-2xl">
-                  <img src={img} alt="Instagram post" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-[#FF7A00]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <FaInstagram className="text-white w-6 h-6 scale-75 group-hover:scale-100 transition-transform" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Payment Methods Section */}
@@ -112,7 +96,7 @@ export function Footer() {
               className="max-w-4xl w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm font-medium">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm font-medium text-center md:text-left">
             <div>
               © {new Date().getFullYear()} Sky High Holidays. All Rights Reserved.
             </div>

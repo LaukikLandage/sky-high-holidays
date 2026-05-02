@@ -80,7 +80,7 @@ export function Testimonials() {
             <motion.div
               key={`${testimonial.id}-${index}`}
               whileHover={{ scale: 1.05, y: -5 }}
-              className="w-[350px] md:w-[400px] bg-white rounded-3xl p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col justify-between hover:shadow-orange-100/50 transition-all duration-500"
+              className="w-[280px] xs:w-[350px] md:w-[400px] bg-white rounded-3xl p-6 xs:p-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col justify-between hover:shadow-orange-100/50 transition-all duration-500"
             >
               <div>
                 <div className="flex gap-1 mb-6">

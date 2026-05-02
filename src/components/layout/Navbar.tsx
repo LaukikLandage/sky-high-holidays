@@ -141,25 +141,25 @@ export function Navbar() {
         {/* Top Info Bar (Upper Strip) */}
         <div className="w-full bg-[#020617] text-white py-2.5 px-6 lg:px-10 border-b border-white/5">
           <div className="max-w-[1200px] mx-auto flex justify-between items-center text-xs md:text-sm font-bold">
-            <div className="flex items-center gap-8">
-              <a href="mailto:ashwin@skyhightravelandtourism.com" className="flex items-center gap-3 hover:text-[#FF7A00] transition-colors">
-                <Mail className="w-4 h-4 text-[#FF7A00]" />
-                <span className="hidden sm:inline text-sm font-semibold tracking-tight">ashwin@skyhightravelandtourism.com</span>
+            <div className="flex items-center gap-4 sm:gap-8">
+              <a href="mailto:ashwin@skyhightravelandtourism.com" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
+                <Mail className="w-3.5 h-3.5 text-[#FF7A00]" />
+                <span className="hidden xs:inline text-[10px] sm:text-sm font-semibold tracking-tight">ashwin@skyhightravelandtourism.com</span>
               </a>
-              <a href="tel:+918700558067" className="flex items-center gap-3 hover:text-[#FF7A00] transition-colors">
-                <Phone className="w-4 h-4 text-[#FF7A00]" />
-                <span className="text-sm font-semibold tracking-tight">+91 8700558067</span>
+              <a href="tel:+918700558067" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
+                <Phone className="w-3.5 h-3.5 text-[#FF7A00]" />
+                <span className="text-[10px] sm:text-sm font-semibold tracking-tight">+91 8700558067</span>
               </a>
             </div>
-            <div className="flex items-center gap-4">
-              <a href="https://www.facebook.com/share/1AfG4C3U3a/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
-                <FaFacebookF className="w-4 h-4 group-hover:scale-110" />
+            <div className="flex items-center gap-3 sm:gap-4">
+              <a href="https://www.facebook.com/share/1AfG4C3U3a/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
+                <FaFacebookF className="w-3 h-3 sm:w-4 sm:h-4 group-hover:scale-110" />
               </a>
-              <a href="https://www.instagram.com/skyhigh_holidays_?igsh=bXp3dm9pdGZ0bHZx" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
-                <FaInstagram className="w-5 h-5 group-hover:scale-110" />
+              <a href="https://www.instagram.com/skyhigh_holidays_?igsh=bXp3dm9pdGZ0bHZx" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
+                <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110" />
               </a>
-              <a href="https://youtube.com/@skyhigh_holidays?si=iXQ4H-RJq747JF2G" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
-                <FaYoutube className="w-5 h-5 group-hover:scale-110" />
+              <a href="https://youtube.com/@skyhigh_holidays?si=iXQ4H-RJq747JF2G" target="_blank" rel="noopener noreferrer" className="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 hover:bg-white text-white hover:text-[#FF7A00] rounded-full flex items-center justify-center transition-all hover:scale-110 shadow-lg hover:shadow-orange-500/20 group">
+                <FaYoutube className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110" />
               </a>
             </div>
           </div>
@@ -234,9 +234,9 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-white pt-32 px-10 flex flex-col gap-8"
+            className="fixed inset-0 z-[60] bg-white pt-32 px-6 sm:px-10 flex flex-col gap-8"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {navLinks.map((link) => {
                 const active = getIsActive(link.path);
                 return (
@@ -247,7 +247,7 @@ export function Navbar() {
                       handleNavClick(e, link.path);
                       setIsMenuOpen(false);
                     }}
-                    className={`text-4xl font-bold tracking-tight transition-colors ${
+                    className={`text-3xl sm:text-4xl font-bold tracking-tight transition-colors ${
                       active ? 'text-[#FF7A00]' : 'text-[#020617]'
                     }`}
                   >

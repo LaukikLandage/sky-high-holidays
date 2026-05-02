@@ -1,4 +1,5 @@
-import CountUp from 'react-countup';
+import CountUpLib from 'react-countup';
+const CountUp = (CountUpLib as any).default || CountUpLib;
 
 interface CounterProps {
   value: string;

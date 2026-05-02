@@ -26,7 +26,7 @@ export function Hero() {
   return (
     <section 
       id="home" 
-      className="relative w-full h-[calc(100vh-130px)] overflow-hidden flex items-center justify-center mt-[130px]"
+      className="relative w-full h-[calc(100dvh-100px)] md:h-[calc(100vh-130px)] overflow-hidden flex items-center justify-center mt-[100px] md:mt-[130px]"
     >
       {/* Fallback Image (z-0, always behind) */}
       <img 

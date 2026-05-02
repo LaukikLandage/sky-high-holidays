@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
-html {
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
   scroll-behavior: smooth;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
 }
 
 @theme {
@@ -25,18 +33,26 @@ html {
 
   /* Global Typography Scale */
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6;
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    @apply mb-6 font-extrabold;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl lg:text-5xl leading-tight mb-4;
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    line-height: 1.2;
+    @apply mb-4 font-extrabold;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-bold;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    line-height: 1.3;
+    @apply font-bold;
   }
 
   p {
+    font-size: clamp(0.95rem, 2vw, 1.125rem);
     @apply leading-relaxed text-gray-600 mb-4;
   }
 }
