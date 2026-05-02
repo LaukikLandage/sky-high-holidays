@@ -41,18 +41,18 @@ export function DestinationCard({ destination }: DestinationCardProps) {
       whileHover={{ y: -8 }}
       className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all h-full flex flex-col"
     >
-      <div className="relative h-64 overflow-hidden shrink-0">
+      <div className="relative aspect-[4/3] overflow-hidden shrink-0">
         <img
           src={destination.image}
           alt={destination.name}
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
+        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
           <Star className="w-4 h-4 fill-[#FF7A00] text-[#FF7A00]" />
           <span className="font-semibold text-sm">{destination.rating || 4.9}</span>
         </div>
-        <div className="absolute top-4 left-4 bg-[#020617] text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
+        <div className="absolute top-4 left-4 bg-[#020617]/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md z-10">
           {destination.duration}
         </div>
       </div>

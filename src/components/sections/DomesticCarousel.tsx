@@ -83,7 +83,7 @@ export function DomesticCarousel() {
                 >
                   <Link 
                     to={`/international/${destination.slug}`}
-                    className="group relative block w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 hover:scale-[1.03] hover:shadow-orange-200/50"
+                    className="group relative block w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.15)] transition-all duration-500 hover:scale-[1.03] hover:shadow-orange-200/50"
                   >
                     {/* Background Image with Zoom */}
                     <img
