@@ -144,7 +144,8 @@ export function Navbar() {
             <div className="flex items-center gap-4 sm:gap-8">
               <a href="mailto:ashwin@skyhightravelandtourism.com" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
                 <Mail className="w-3.5 h-3.5 text-[#FF7A00]" />
-                <span className="hidden xs:inline text-[10px] sm:text-sm font-semibold tracking-tight">ashwin@skyhightravelandtourism.com</span>
+                <span className="hidden lg:inline text-sm font-semibold tracking-tight">ashwin@skyhightravelandtourism.com</span>
+                <span className="inline lg:hidden text-[10px] font-semibold tracking-tight">ashwin@skyhigh...</span>
               </a>
               <a href="tel:+918700558067" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#FF7A00]" />

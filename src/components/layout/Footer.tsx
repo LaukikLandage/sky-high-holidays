@@ -48,7 +48,8 @@ export function Footer() {
                   <Mail className="w-5 h-5 text-[#FF7A00]" />
                 </div>
                 <a href="mailto:ashwin@skyhightravelandtourism.com" className="hover:text-[#FF7A00] transition-colors font-medium break-all">
-                  ashwin@skyhightravelandtourism.com
+                  <span className="hidden lg:inline">ashwin@skyhightravelandtourism.com</span>
+                  <span className="inline lg:hidden">ashwin@skyhigh...</span>
                 </a>
               </div>
             </div>
