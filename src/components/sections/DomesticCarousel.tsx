@@ -89,6 +89,7 @@ export function DomesticCarousel() {
                     <img
                       src={destination.image}
                       alt={destination.name}
+                      loading="lazy"
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
                     
