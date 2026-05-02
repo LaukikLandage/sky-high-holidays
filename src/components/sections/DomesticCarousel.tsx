@@ -93,20 +93,20 @@ export function DomesticCarousel() {
                     />
                     
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent group-hover:from-[#020617]/80 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-black/90 transition-all duration-500"></div>
 
                     {/* Text Content (Bottom Left) */}
                     <div className="absolute bottom-8 left-8 text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <h3 className="text-2xl md:text-3xl font-black mb-1.5 tracking-tight group-hover:text-[#FF7A00] transition-colors">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-1.5 tracking-tight text-white transition-colors">
                         {destination.name}
                       </h3>
-                      <p className="text-white/60 text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">
+                      <p className="text-white/80 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
                         {destination.location}
                       </p>
                     </div>
 
                     {/* View Details Badge */}
-                    <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
+                    <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-md border border-white/30 p-3 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-90 group-hover:scale-100">
                       <ChevronRight className="w-5 h-5 text-white" />
                     </div>
                   </Link>

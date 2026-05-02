@@ -5,7 +5,7 @@ export const DESTINATIONS = [
     location: 'Indian Ocean',
     price: '₹1,99,999',
     rating: 5.0,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCqHcyTPQ4b-a7oX1HZtZZ2BeQfmNb2LAaoyjZ8tyiI3faRJwpnbou_6VTH4RQC0bbk0oMFkpwt-9Zv6WZjol24vfMsJrl-cJUKyWMZcFvTPysOFNCbi6TyahwxLvfJAjk1E13UiPQOX35IB46GWY2tZJoeBq18LC5U4nvyawl15wyG5-hrpzxufPH67jSFTWLMIewc-g2ifsaOhh4uXaJJueNHCQ0yjizCOEyENgGrwBxuncs5r2rBo54BE1JNKmGSq2o_YvErt5Y',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
     type: 'international'
   },
@@ -15,7 +15,7 @@ export const DESTINATIONS = [
     location: 'Middle East',
     price: '₹99,999',
     rating: 4.9,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDHGRE5jx6ihPLNvEeq28mofdWIxZUsgGnhO4_KXdnu27t8kH4C86mSdPNAXEm1qowaXECE_iQxtqMvMu_cB6JxI6JYsuKMwsiaCkEuUiU9boiCk46ioeN0wt8kpLtOGMBsnrPoIb2NlV_bUgc9GswzF8oewSq7h6JGsSM6r3ujDfvNDnTWOh90N7M82BVtHuUtnHNE8By3joEzuh7CVLG6dv0aGUdT6hkNkk1gK6oFs1zVZeTfJbTCjF5xPXTwCJErzL6EpNqFzEI',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea4e735c464?auto=format&fit=crop&q=80&w=1200',
     duration: '5 Days',
     type: 'international'
   },
@@ -25,7 +25,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹79,999',
     rating: 4.8,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFaGvJaDOUVJorhaxuJzdKgp2z7F8sEb4H6Gn6EkH4Hj19uJ1KWVSD_8ksnO-1HNlTem6MC7jB1DxRxB9soX2fEPgWCBGUQUwz_a8uvenW3Xv7vQI4UBM0rk7nKMmzZAb6CqqFFIx8BjNPK86BxrZ0wOR7UVAT22L0Kcp05mMPCw5AzRnnkg5zmq7R_CUCl9oXvwspZHEJwYq3cFVsaObfpef-CpMTE4YSiG6q3KcXBu-LXeXp5IBUE_OWTn_v0mQ3zkCS55kl9Ow',
+    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
     type: 'international'
   },
@@ -35,7 +35,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹69,999',
     rating: 4.7,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCvQY0EY-8xsSIEw3RFc5P0rwOSnrAg51pOSJ38ncUNU80Nydqm60n-nvU4gTlo_XLS6MxUpCcyZhaSCWwrvtxFWiaTkjDcxuYHdVFB-lWZ0BxNDLs3QJ8VL2JaYqUsjEfL50WgENP_fDgBpqHkZjkIpoHSEqrJ6SqJACCtBTrUpwwqRQPQ45cjNi-Imsk_4Oa8RkBJMEl88OTJf79oSW7kmAxOaF-4Sy-JVCO46xIPPTVD4NrscMevqG36nGFYP2TuTyL992315Og',
+    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200',
     duration: '6 Days',
     type: 'international'
   },
@@ -45,7 +45,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹84,999',
     rating: 4.8,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-KWh2gQpxRmjt8s0nkHvzkLvuM-CmtDW-Wvn7OAGLyuHEOxwmohsftmJZETRkUwUSOFPWbPwNsn8a5VKcADoajoYljy7OwbK5Zc3K7xJvgT87BonVWppCV1WgWbZFiSS7yBz6mXnAxg-i1konfonlCK4FRjc8GIG9rLXjQmWEWQu7XALHJ75qO87XTNDErXgj18GBRtsRONqG15JemalbyJwyfMdj_Kif6qP_iS5xqSSDbZZhl6FMuQqSSHcb_iK7EUrvP1XbwXs',
+    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&q=80&w=1200',
     duration: '8 Days',
     type: 'international'
   },
@@ -55,7 +55,7 @@ export const DESTINATIONS = [
     location: 'Southeast Asia',
     price: '₹1,24,999',
     rating: 4.9,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA1MBT21f8GG36VmbwvbWIGay_j4zQtxFGjRoRO40o2VAeaBu-Dy1-2zNnwRU0HG2yKI_a12rtQGcnAiuHsnHPN6IQP9056pWvu2RdqjPVZ9vrHzOXFwrdXZtvQu4YNdDjk_67k4Y_7hKxrEsw_ccBHb1Gix9uv2kX10lFWlSMU5AV2ehyb9gnAbMddnU8W_aEu1fgh3fMP18pmFY-Q0MZ-fBek46yHqlL9jBs7N6AtAiLY5UpMTOirp1qK9RixOzu7g8YuMFYg_Lc',
+    image: 'https://images.unsplash.com/photo-1525625239911-9881816742df?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
     type: 'international'
   }
@@ -69,7 +69,7 @@ export const DOMESTIC_DESTINATIONS = [
     price: '₹45,999',
     duration: '6 Days',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1598325176510-9195360980ba?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1562016600-ece13e8ba570?auto=format&fit=crop&q=80&w=1200',
     type: 'domestic'
   },
   {
@@ -79,7 +79,7 @@ export const DOMESTIC_DESTINATIONS = [
     price: '₹34,999',
     duration: '5 Days',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1597052945230-f9f381be0a1d?auto=format&fit=crop&q=80&w=1200',
     type: 'domestic'
   },
   {
@@ -129,7 +129,7 @@ export const DOMESTIC_DESTINATIONS = [
     price: '₹29,999',
     duration: '5 Days',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1597052945230-f9f381be0a1d?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1588636400501-923f03b879a9?auto=format&fit=crop&q=80&w=1200',
     type: 'domestic'
   },
   {
