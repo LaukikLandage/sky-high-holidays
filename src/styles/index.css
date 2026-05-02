@@ -121,3 +121,31 @@ body {
 .animate-marquee:hover, .animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
+
+/* Mobile-specific Hero Fixes (320px - 480px) */
+@media (max-width: 480px) {
+  #home {
+    margin-top: 0 !important;
+    padding-top: calc(100px + env(safe-area-inset-top)) !important;
+    height: auto !important;
+    min-height: calc(100dvh - 20px) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #home h1 {
+    font-size: clamp(26px, 8vw, 32px) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #home p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  #home .relative.z-20 {
+    padding-bottom: 40px !important;
+    padding-top: 20px !important;
+  }
+}
