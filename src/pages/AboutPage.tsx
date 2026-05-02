@@ -18,10 +18,17 @@ const awards = [
   { title: 'Top Rated Travel Service', organization: 'Digital Hospitality' },
 ];
 
+import { useInView } from 'react-intersection-observer';
+
 export default function AboutPage() {
+  const { ref: statsRef, inView: statsInView } = useInView({
+    triggerOnce: false,
+    threshold: 0.5,
+  });
+
   return (
     <div className="pt-48 pb-20">
-      {/* Hero Section */}
+      {/* ... Hero Section ... */}
       <section className="relative py-24 lg:py-32 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[#F9FAFB] -z-10" />
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -53,7 +60,7 @@ export default function AboutPage() {
             >
               <div className="aspect-[4/5] bg-[#F3F4F6] rounded-3xl overflow-hidden relative shadow-2xl">
                 <img 
-                  src="/images/founder.jpg" 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
                   alt="Ashwin Nair - Founder of Sky High Holidays" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
@@ -191,7 +198,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-[#020617] relative overflow-hidden">
+      <section ref={statsRef} className="py-24 bg-[#020617] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24">
@@ -199,8 +206,7 @@ export default function AboutPage() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1 }}
                 className="text-center space-y-4"
               >
@@ -208,11 +214,7 @@ export default function AboutPage() {
                   <stat.icon className="w-8 h-8 text-[#FF7A00]" />
                 </div>
                 <h4 className="text-4xl md:text-5xl font-black text-white">
-                  {stat.value.includes('+') || stat.value.includes('%') ? (
-                    <Counter value={stat.value} />
-                  ) : (
-                    stat.value
-                  )}
+                  <Counter value={stat.value} start={statsInView} />
                 </h4>
                 <p className="text-sm text-gray-400 uppercase tracking-widest font-bold">{stat.label}</p>
               </motion.div>

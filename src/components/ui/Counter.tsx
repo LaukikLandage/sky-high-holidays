@@ -17,9 +17,10 @@ export function Counter({ value, duration = 2.5, start = false }: CounterProps) 
   return (
     <span className="tabular-nums inline-flex items-center">
       <CountUp 
-        end={target} 
+        key={start ? 'active' : 'inactive'}
+        end={start ? target : 0} 
         duration={duration} 
-        start={start} 
+        start={0}
         suffix={suffix}
         useEasing={true}
       />
