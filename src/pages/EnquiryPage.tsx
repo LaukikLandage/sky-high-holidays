@@ -20,7 +20,9 @@ export default function EnquiryPage() {
   useEffect(() => {
     const dest = searchParams.get('destination');
     if (dest) {
-      setFormData(prev => ({ ...prev, destination: dest }));
+      // Basic sanitization: strip any characters that could be part of a script
+      const sanitizedDest = dest.replace(/[<>{}()[\]]/g, '');
+      setFormData(prev => ({ ...prev, destination: sanitizedDest }));
     }
   }, [searchParams]);
 

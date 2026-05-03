@@ -42,7 +42,11 @@ export function StatsSection() {
             >
               <div className="relative inline-block">
                 <h3 className="text-3xl md:text-4xl font-black text-white mb-1">
-                  <Counter value={stat.value} start={inView} />
+                  {stat.value === '24/7' ? (
+                    <span className="tabular-nums">{stat.value}</span>
+                  ) : (
+                    <Counter value={stat.value} start={inView} />
+                  )}
                 </h3>
                 {/* Underline Animation */}
                 <div className="h-1 w-0 bg-[#FFC107] mx-auto transition-all duration-500 group-hover:w-full rounded-full"></div>

@@ -42,23 +42,32 @@ export function DestinationCard({ destination }: DestinationCardProps) {
     e.preventDefault();
     e.stopPropagation();
     
-    let url = '';
+    // Predefined static message (No user input)
+    const shareText = "Explore this amazing holiday package from Sky High Holidays ✈️";
+    
+    let rawUrl = '';
     if (destination.type === 'domestic') {
-      url = `${window.location.origin}/enquiry?destination=${encodeURIComponent(destination.name)}`;
+      rawUrl = `${window.location.origin}/enquiry?destination=${encodeURIComponent(destination.name)}`;
     } else {
       const slug = destination.slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-      url = `${window.location.origin}/international/${slug}`;
+      rawUrl = `${window.location.origin}/international/${slug}`;
     }
     
+    // Web Share API (Preferred for mobile)
     if (navigator.share) {
       navigator.share({
-        title: `Sky High Holidays - ${destination.name}`,
-        text: `Check out this amazing travel package to ${destination.name}!`,
-        url: url
+        title: "Sky High Holidays",
+        text: shareText,
+        url: rawUrl
       }).catch(console.error);
     } else {
-      navigator.clipboard.writeText(url).then(() => {
-        alert(`Link for ${destination.name} copied to clipboard!`);
+      // Fallback: Copy to clipboard
+      navigator.clipboard.writeText(rawUrl).then(() => {
+        alert('Link copied to clipboard!');
+      }).catch(() => {
+        // Ultimate fallback: Manual WhatsApp link (Encoded)
+        const safeText = encodeURIComponent(`${shareText} ${rawUrl}`);
+        window.open(`https://wa.me/?text=${safeText}`, '_blank');
       });
     }
   };
