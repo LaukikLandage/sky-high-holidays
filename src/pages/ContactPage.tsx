@@ -117,8 +117,8 @@ export function ContactPage() {
             icon={Phone}
             title="Call"
             description="Available 24/7"
-            detail="+91 8700558067"
-            href="tel:+918700558067"
+            detail="+91 8700558065"
+            href="tel:+918700558065"
           />
           <InfoCard 
             icon={Mail}

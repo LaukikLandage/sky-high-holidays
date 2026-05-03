@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { FaWhatsapp, FaPhoneAlt } from 'react-icons/fa';
 
 export function FloatingContactButtons() {
-  const phoneNumber = "918700558067";
+  const phoneNumber = "918700558065";
   const whatsappUrl = `https://wa.me/${phoneNumber}`;
   const callUrl = `tel:+${phoneNumber}`;
 

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, User } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
 
 const testimonials = [
@@ -98,11 +98,9 @@ export function Testimonials() {
               </div>
 
               <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-orange-100"
-                />
+                <div className="w-14 h-14 rounded-full bg-orange-50 border-2 border-orange-100 flex items-center justify-center shrink-0">
+                  <User className="w-7 h-7 text-[#FF7A00]" />
+                </div>
                 <div>
                   <h4 className="font-bold text-[#020617]">{testimonial.name}</h4>
                   <p className="text-sm text-gray-500 font-medium">{testimonial.role}</p>

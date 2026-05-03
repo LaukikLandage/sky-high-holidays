@@ -8,6 +8,15 @@ export interface ItineraryItem {
   content: string;
 }
 
+export interface HotelStay {
+  name: string;
+  roomType: string;
+  nights: number;
+  meals: string;
+  image?: string;
+  mapQuery?: string;
+}
+
 export interface Destination {
   id: string;
   name: string;
@@ -16,6 +25,7 @@ export interface Destination {
   duration: string;
   price: string;
   image: string;
+  posterImage?: string; // Optional custom poster image for detail page
   gallery: string[];
   overview: string;
   highlights: string[];
@@ -26,6 +36,8 @@ export interface Destination {
   paymentPolicy: string[];
   terms: string;
   type: 'international' | 'domestic';
+  hotelStay?: HotelStay;
+  isTrending?: boolean;
 }
 
 interface DestinationState {
@@ -46,20 +58,30 @@ const mapInitialData = (data: any[]): Destination[] => {
     duration: d.duration,
     price: d.price,
     image: d.image,
-    gallery: [d.image, d.image, d.image], // Mock gallery
-    overview: `Experience the magic of ${d.name} with our carefully curated premium package. This itinerary offers the perfect balance of adventure and relaxation.`,
-    highlights: ['Luxury Stay', 'Guided Tours', 'Premium Transfers'],
-    itinerary: [
+    posterImage: d.posterImage,
+    gallery: d.gallery || [d.image, d.image, d.image], // Use provided gallery or mock it
+    overview: d.overview || `Experience the magic of ${d.name} with our carefully curated premium package. This itinerary offers the perfect balance of adventure and relaxation.`,
+    highlights: d.highlights || ['Luxury Stay', 'Guided Tours', 'Premium Transfers'],
+    itinerary: d.itinerary || [
       { day: 1, title: 'Arrival & Welcome', content: 'Welcome to your dream destination! Transfer to hotel and evening at leisure.' },
       { day: 2, title: 'City Exploration', content: 'Full day sightseeing tour of major landmarks.' },
       { day: 3, title: 'Local Experiences', content: 'Immerse yourself in the local culture and cuisine.' },
     ],
-    inclusions: ['Round-trip Airfare', '4-Star Hotel Accommodation', 'Daily Breakfast', 'All Transfers'],
-    exclusions: ['Personal Expenses', 'Travel Insurance', 'Lunches & Dinners', 'Optional Tours'],
-    cancellationPolicy: ['30 days before: 20% charge', '15 days before: 50% charge', 'Less than 7 days: 100% charge'],
-    paymentPolicy: ['25% deposit at booking', 'Remaining 75% 30 days before travel'],
-    terms: 'Prices are subject to availability at the time of booking. Standard terms and conditions apply.',
-    type: d.type
+    inclusions: d.inclusions || ['Round-trip Airfare', '4-Star Hotel Accommodation', 'Daily Breakfast', 'All Transfers'],
+    exclusions: d.exclusions || ['Personal Expenses', 'Travel Insurance', 'Lunches & Dinners', 'Optional Tours'],
+    cancellationPolicy: d.cancellationPolicy || ['30 days before: 20% charge', '15 days before: 50% charge', 'Less than 7 days: 100% charge'],
+    paymentPolicy: d.paymentPolicy || ['25% deposit at booking', 'Remaining 75% 30 days before travel'],
+    terms: d.terms || 'Prices are subject to availability at the time of booking. Standard terms and conditions apply.',
+    type: d.type,
+    isTrending: d.isTrending || d.type === 'international',
+    hotelStay: d.hotelStay || {
+      name: 'Premium Partner Hotel',
+      roomType: 'Deluxe Category Room',
+      nights: parseInt(d.duration?.split(' ')[0]) || 4,
+      meals: 'Daily Breakfast Included',
+      image: `https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200`,
+      mapQuery: d.name
+    }
   }));
 };
 

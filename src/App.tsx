@@ -11,6 +11,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ defaul
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const EnquiryPage = lazy(() => import('./pages/EnquiryPage'));
 const ComponentLibraryPage = lazy(() => import('./pages/ComponentLibraryPage').then(m => ({ default: m.ComponentLibraryPage })));
+const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const AdminEditDestination = lazy(() => import('./pages/admin/AdminEditDestination'));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
@@ -36,6 +37,7 @@ function App() {
             <Route path="/enquiry" element={<EnquiryPage />} />
             <Route path="/destinations" element={<DestinationsPage />} />
             <Route path="/international/:slug" element={<DestinationDetailPage />} />
+            <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/design-system" element={<ComponentLibraryPage />} />
             

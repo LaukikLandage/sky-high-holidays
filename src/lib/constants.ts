@@ -16,6 +16,7 @@ export const DESTINATIONS = [
     price: '₹99,999',
     rating: 4.9,
     image: 'https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?auto=format&fit=crop&q=80&w=1200',
+    posterImage: '/Dubai/dubai package cover img.jpeg',
     duration: '5 Days',
     type: 'international'
   },

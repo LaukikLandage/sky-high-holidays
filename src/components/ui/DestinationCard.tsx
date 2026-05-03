@@ -1,9 +1,10 @@
-import { Star, MapPin, ArrowRight } from 'lucide-react';
+import { Share2, MapPin, ArrowRight, Flame } from 'lucide-react';
 import { Button } from './Button';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 export interface Destination {
+  id: string;
   name: string;
   location: string;
   price: string;
@@ -12,6 +13,7 @@ export interface Destination {
   duration: string;
   type?: 'international' | 'domestic';
   slug?: string;
+  isTrending?: boolean;
 }
 
 interface DestinationCardProps {
@@ -36,6 +38,31 @@ export function DestinationCard({ destination }: DestinationCardProps) {
     }
   };
 
+  const handleShare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    let url = '';
+    if (destination.type === 'domestic') {
+      url = `${window.location.origin}/enquiry?destination=${encodeURIComponent(destination.name)}`;
+    } else {
+      const slug = destination.slug || destination.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+      url = `${window.location.origin}/international/${slug}`;
+    }
+    
+    if (navigator.share) {
+      navigator.share({
+        title: `Sky High Holidays - ${destination.name}`,
+        text: `Check out this amazing travel package to ${destination.name}!`,
+        url: url
+      }).catch(console.error);
+    } else {
+      navigator.clipboard.writeText(url).then(() => {
+        alert(`Link for ${destination.name} copied to clipboard!`);
+      });
+    }
+  };
+
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -48,25 +75,42 @@ export function DestinationCard({ destination }: DestinationCardProps) {
           loading="lazy"
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
         />
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
-          <Star className="w-4 h-4 fill-[#FF7A00] text-[#FF7A00]" />
-          <span className="font-semibold text-sm">{destination.rating || 4.9}</span>
-        </div>
-        <div className="absolute top-4 left-4 bg-[#020617]/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md z-10">
-          {destination.duration}
-        </div>
+        {/* Share Button (Moved to top-left) */}
+        <button 
+          onClick={handleShare}
+          className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2 rounded-full flex items-center justify-center shadow-md z-20 hover:bg-[#FF7A00] hover:text-white transition-all duration-300"
+          title="Share Package"
+        >
+          <Share2 className="w-4 h-4" />
+        </button>
+
+        {/* Trending Badge (Top-right) */}
+        {destination.isTrending && (
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            whileHover={{ scale: 1.05 }}
+            className="absolute top-4 right-4 z-20"
+          >
+            <div className="relative group/badge">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FF7A00] to-[#FFB800] rounded-full blur-md opacity-50 group-hover/badge:opacity-100 transition-opacity animate-pulse" />
+              
+              <div className="relative bg-gradient-to-r from-[#FF7A00] to-[#FFB800] text-white px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-lg border border-white/20">
+                <Flame className="w-3.5 h-3.5 fill-white animate-bounce" style={{ animationDuration: '2s' }} />
+                <span className="text-[10px] font-black uppercase tracking-wider">Trending</span>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       <div className="p-6 flex flex-col flex-1">
-        {/* Title and Location Container - Fixed Height to prevent shifting */}
-        <div className="mb-4">
-          <h3 className="text-xl font-bold text-[#020617] mb-2 h-[56px] line-clamp-2 leading-tight">
+        {/* Title Container */}
+        <div className="mb-2">
+          <h3 className="text-xl font-bold text-[#020617] line-clamp-2 leading-tight">
             {destination.name}
           </h3>
-          <div className="flex items-center gap-1 text-gray-600">
-            <MapPin className="w-4 h-4 shrink-0" />
-            <span className="text-sm truncate">{destination.location}</span>
-          </div>
         </div>
 
         {/* Price Section - Always pushed above button */}

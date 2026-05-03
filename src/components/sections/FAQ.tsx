@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, HelpCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const faqs = [
   {
@@ -103,9 +104,11 @@ export function FAQ() {
         {/* Still Have Questions? */}
         <div className="mt-16 text-center">
           <p className="text-gray-500 font-medium mb-6">Still have more questions? We're here to help you.</p>
-          <button className="px-8 py-4 bg-[#020617] text-white rounded-full font-bold hover:bg-[#FF7A00] hover:text-[#020617] transition-all duration-300 shadow-xl shadow-gray-200">
-            Contact Support
-          </button>
+          <Link to="/contact">
+            <button className="px-8 py-4 bg-[#020617] text-white rounded-full font-bold hover:bg-[#FF7A00] hover:text-[#020617] transition-all duration-300 shadow-xl shadow-gray-200">
+              Contact Support
+            </button>
+          </Link>
         </div>
 
       </div>

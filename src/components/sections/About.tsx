@@ -28,7 +28,7 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-gray-600 text-lg mb-6 leading-relaxed text-center lg:text-left">
-              Sky High Holidays is your premier travel partner, dedicated to transforming your travel dreams into unforgettable realities. We specialize in curating bespoke journeys that combine luxury, authenticity, and adventure.
+              Sky High Holidays is your premium travel partner, dedicated to transforming your travel dreams into unforgettable realities. We specialize in curating bespoke journeys that combine luxury, authenticity, and adventure.
             </p>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">
               From pristine beaches to cultural expeditions, our expert team ensures every detail is meticulously planned for a seamless experience.

@@ -86,6 +86,7 @@ export function Navbar() {
     if (!isHomePage) {
       if (path === '/about') return location.pathname === '/about';
       if (path === '/contact') return location.pathname === '/contact';
+      if (path === '/reviews') return location.pathname === '/reviews';
       return false;
     }
     
@@ -132,6 +133,7 @@ export function Navbar() {
     { name: 'About', path: '/about' },
     { name: 'International', path: '/#international' },
     { name: 'Domestic', path: '/#domestic' },
+    { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -146,9 +148,9 @@ export function Navbar() {
                 <Mail className="w-3.5 h-3.5 text-[#FF7A00]" />
                 <span className="text-sm font-semibold tracking-tight">ashwin@skyhightravelandtourism.com</span>
               </a>
-              <a href="tel:+918700558067" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
+              <a href="tel:+918700558065" className="flex items-center gap-2 sm:gap-3 hover:text-[#FF7A00] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[#FF7A00]" />
-                <span className="text-[10px] sm:text-sm font-semibold tracking-tight">+91 8700558067</span>
+                <span className="text-[10px] sm:text-sm font-semibold tracking-tight">+91 8700558065</span>
               </a>
             </div>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -177,7 +179,7 @@ export function Navbar() {
               <img 
                 src="/logo.png" 
                 alt="Sky High Holidays" 
-                className="h-10 w-auto group-hover:scale-105 transition-transform"
+                className="h-12 md:h-16 w-auto group-hover:scale-105 transition-transform"
               />
             </Link>
 

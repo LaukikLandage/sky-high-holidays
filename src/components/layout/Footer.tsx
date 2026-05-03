@@ -17,7 +17,7 @@ export function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Sky High Holidays" 
-                className="h-14 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity"
               />
             </Link>
             
@@ -40,7 +40,7 @@ export function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#FF7A00]/20 transition-colors">
                   <Phone className="w-5 h-5 text-[#FF7A00]" />
                 </div>
-                <a href="tel:+918700558067" className="hover:text-[#FF7A00] transition-colors font-medium">+91 8700558067</a>
+                <a href="tel:+918700558065" className="hover:text-[#FF7A00] transition-colors font-medium">+91 8700558065</a>
               </div>
               
               <div className="flex items-center gap-4 group">
@@ -58,7 +58,7 @@ export function Footer() {
               <SocialIcon icon={FaFacebookF} href="https://www.facebook.com/share/1AfG4C3U3a/?mibextid=wwXIfr" label="Facebook" />
               <SocialIcon icon={FaInstagram} href="https://www.instagram.com/skyhigh_holidays_?igsh=bXp3dm9pdGZ0bHZx" label="Instagram" />
               <SocialIcon icon={FaYoutube} href="https://youtube.com/@skyhigh_holidays?si=iXQ4H-RJq747JF2G" label="YouTube" />
-              <SocialIcon icon={FaWhatsapp} href="https://wa.me/918700558067" label="WhatsApp" />
+              <SocialIcon icon={FaWhatsapp} href="https://wa.me/918700558065" label="WhatsApp" />
             </div>
           </div>
 
