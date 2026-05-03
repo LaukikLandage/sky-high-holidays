@@ -13,7 +13,7 @@ const stats = [
 ];
 
 const awards = [
-  { title: 'Best Travel Agency 2024', organization: 'Tourism Excellence' },
+  { title: `Best Travel Agency ${new Date().getFullYear() - 1}`, organization: 'Tourism Excellence' },
   { title: 'Customer Excellence Award', organization: 'Travelers Choice' },
   { title: 'Top Rated Travel Service', organization: 'Digital Hospitality' },
 ];
@@ -27,9 +27,9 @@ export default function AboutPage() {
   });
 
   return (
-    <div className="pt-48 pb-20">
+    <div className="pt-36 pb-20">
       {/* ... Hero Section ... */}
-      <section className="relative py-24 lg:py-32 overflow-hidden bg-white">
+      <section className="relative pt-10 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[#F9FAFB] -z-10" />
         <div className="max-w-7xl mx-auto px-6 text-center">
           <SectionHeader 

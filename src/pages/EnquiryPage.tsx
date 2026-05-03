@@ -32,7 +32,7 @@ export default function EnquiryPage() {
   };
 
   return (
-    <div className="relative pt-48 pb-24 bg-[#F9FAFB] min-h-screen overflow-hidden">
+    <div className="relative pt-52 md:pt-60 pb-24 bg-[#F9FAFB] min-h-screen overflow-hidden">
       {/* Background World Map Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-0 flex items-center justify-center overflow-hidden">
         <img 

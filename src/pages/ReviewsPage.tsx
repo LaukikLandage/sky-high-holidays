@@ -7,7 +7,7 @@ import { ServiceMarquee } from '../components/sections/ServiceMarquee';
 
 export default function ReviewsPage() {
   return (
-    <div className="min-h-screen bg-[#F9FAFB] pt-48 font-sans text-[#020617]">
+    <div className="min-h-screen bg-[#F9FAFB] pt-52 md:pt-60 font-sans text-[#020617]">
       
       {/* Page Header */}
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 mb-16">

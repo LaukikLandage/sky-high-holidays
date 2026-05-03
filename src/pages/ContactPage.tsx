@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react';
 
 export function ContactPage() {
   return (
-    <div className="pt-48 pb-24 min-h-screen bg-[#FDF5E6]/30">
+    <div className="pt-52 md:pt-60 pb-24 min-h-screen bg-[#FDF5E6]/30">
       {/* Centered Heading */}
       <section className="max-w-7xl mx-auto px-6 mb-16 text-center">
         <motion.h1 

@@ -12,6 +12,9 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const EnquiryPage = lazy(() => import('./pages/EnquiryPage'));
 const ComponentLibraryPage = lazy(() => import('./pages/ComponentLibraryPage').then(m => ({ default: m.ComponentLibraryPage })));
 const ReviewsPage = lazy(() => import('./pages/ReviewsPage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const CancellationPolicy = lazy(() => import('./pages/CancellationPolicy'));
+const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const AdminEditDestination = lazy(() => import('./pages/admin/AdminEditDestination'));
 const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
@@ -40,6 +43,11 @@ function App() {
             <Route path="/reviews" element={<ReviewsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/design-system" element={<ComponentLibraryPage />} />
+            
+            {/* Legal Pages */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/terms-conditions" element={<TermsConditions />} />
             
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminDashboard />} />

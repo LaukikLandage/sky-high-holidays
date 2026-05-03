@@ -15,7 +15,7 @@ export function Footer() {
           <div className="space-y-10">
             <Link to="/" className="inline-block">
               <img 
-                src="/logo.png" 
+                src="/footer-logo.png" 
                 alt="Sky High Holidays" 
                 className="h-20 w-auto opacity-90 hover:opacity-100 transition-opacity"
               />
@@ -78,9 +78,9 @@ export function Footer() {
             <div className="space-y-8">
               <h3 className="text-lg font-bold uppercase tracking-[0.2em] text-white border-b border-white/10 pb-4 inline-block whitespace-nowrap">Support</h3>
               <ul className="space-y-5">
-                <FooterLink to="/privacy">Privacy Policy</FooterLink>
-                <FooterLink to="/cancellation">Cancellation Policy</FooterLink>
-                <FooterLink to="/terms">Terms & Conditions</FooterLink>
+                <FooterLink to="/privacy-policy">Privacy Policy</FooterLink>
+                <FooterLink to="/cancellation-policy">Cancellation Policy</FooterLink>
+                <FooterLink to="/terms-conditions">Terms & Conditions</FooterLink>
               </ul>
             </div>
           </div>
