@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Home, Plane, Search, ChevronRight, Globe } from 'lucide-react';
+import { Home, Plane, Search, Globe } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 
 export function NotFound() {

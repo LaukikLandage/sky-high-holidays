@@ -1,4 +1,4 @@
-import { Share2, MapPin, ArrowRight, Flame } from 'lucide-react';
+import { Share2, Flame, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
