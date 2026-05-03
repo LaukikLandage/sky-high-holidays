@@ -10,10 +10,10 @@ export function StatsSection() {
   });
 
   const stats = [
-    { value: '1000+', label: 'Happy Travellers' },
+    { value: '500+', label: 'Happy Travellers' },
     { value: '24/7', label: 'On-Trip Support' },
     { value: '98%', label: 'Customer Satisfaction' },
-    { value: '350+', label: '5-Star Google Reviews' },
+    { value: '250+', label: '5-Star Google Reviews' },
   ];
 
   return (

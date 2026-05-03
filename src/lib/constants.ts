@@ -15,8 +15,8 @@ export const DESTINATIONS = [
     location: 'Middle East',
     price: '₹99,999',
     rating: 4.9,
-    image: 'https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?auto=format&fit=crop&q=80&w=1200',
-    posterImage: '/Dubai/dubai package cover img.jpeg',
+    image: '/images/1_Destinations/International/Dubai/cover/dubai-cover.jpeg',
+    posterImage: '/images/1_Destinations/International/Dubai/poster/poster.jpg',
     duration: '5 Days',
     type: 'international'
   },
