@@ -130,6 +130,11 @@ export function DestinationDetailPage() {
           
           {/* LEFT SIDE: Gallery + Details */}
           <div className="lg:col-span-7 space-y-16">
+            {/* 
+                IMPORTANT: Gallery scrolling applies ONLY to gallery section. 
+                Do NOT add scroll to cover/poster. 
+                Use correct folders — cover, poster, gallery.
+            */}
             
             {/* 1. IMAGE GALLERY */}
             <section 
@@ -151,26 +156,28 @@ export function DestinationDetailPage() {
                   />
                 </AnimatePresence>
                 
+                {/* Navigation Arrows - Visible on all sizes */}
                 <button 
                   onClick={() => setActiveImageIndex((prev) => (prev - 1 + gallery.length) % gallery.length)}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/40 hover:bg-[#FF7A00] text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10 shadow-lg"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-[#FF7A00] text-white rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg"
                 >
-                  <ArrowLeft className="w-6 h-6" />
+                  <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
                 <button 
                   onClick={() => setActiveImageIndex((prev) => (prev + 1) % gallery.length)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/40 hover:bg-[#FF7A00] text-white rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10 shadow-lg"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-[#FF7A00] text-white rounded-full flex items-center justify-center transition-all duration-300 z-10 shadow-lg"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
               </div>
 
-              <div className="flex gap-[12px] overflow-x-auto pb-2 no-scrollbar items-center snap-x">
+              {/* Horizontal Scrollable Thumbnails - ONLY for Gallery */}
+              <div className="flex gap-[12px] overflow-x-auto pb-4 no-scrollbar items-center snap-x scroll-smooth">
                 {gallery.map((img, i) => (
                   <button 
                     key={i}
                     onClick={() => setActiveImageIndex(i)}
-                    className={`relative shrink-0 w-[120px] h-[80px] rounded-[12px] overflow-hidden transition-all duration-300 snap-center ${
+                    className={`relative shrink-0 w-[100px] md:w-[120px] h-[65px] md:h-[80px] rounded-[12px] overflow-hidden transition-all duration-300 snap-center ${
                       activeImageIndex === i 
                         ? 'ring-2 ring-offset-2 ring-[#FF7A00] scale-[1.02] opacity-100 z-10' 
                         : 'opacity-50 hover:opacity-100'
