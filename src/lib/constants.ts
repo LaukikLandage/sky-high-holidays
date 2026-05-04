@@ -16,9 +16,37 @@ export const DESTINATIONS = [
     price: '₹99,999',
     rating: 4.9,
     image: '/images/1_Destinations/International/Dubai/cover/dubai-cover.jpeg',
-    posterImage: '/images/1_Destinations/International/Dubai/poster/poster.jpg',
-    duration: '5 Days',
-    type: 'international'
+    duration: '5 Days / 4 Nights',
+    type: 'international',
+    hotelStay: {
+      name: 'Admiral Plaza Bur Dubai',
+      roomType: 'Standard Room',
+      nights: 4,
+      meals: 'Daily Breakfast',
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
+      mapQuery: 'Admiral Plaza Hotel Dubai'
+    },
+    itinerary: [
+      { day: 1, title: 'Arrival & Cruise Dinner', content: 'Welcome to your dream destination! Transfer to hotel and evening Dinner at Cruise.' },
+      { day: 2, title: 'Dubai Tour & Burj Khalifa', content: 'Experience the best of Dubai with a guided city tour and discover modern marvels, cultural landmarks and visit to the iconic Burj Khalifa skyline views all in one unforgettable journey.' },
+      { day: 3, title: 'Desert Safari - Dune Bashing & Dinner', content: 'Golden dunes at sunset, thrilling dune bashing in a 4x4, followed by a magical desert camp dinner under the stars, BBQ feast, traditional performances, warm Arabian night ambiance ✨' },
+      { day: 4, title: 'Leisure Day to Explore', content: 'Relaxed day at your own pace, explore hidden gems, café hopping, local markets, scenic views, and spontaneous adventures ✨' },
+      { day: 5, title: 'Departure Transfers to Airport', content: 'Smooth hotel-to-airport transfer, hassle-free departure, comfortable ride, timely pickup, stress-free end to your journey' }
+    ],
+    inclusions: [
+      'Dubai Visa',
+      'Hotel Accommodation',
+      'Daily Breakfast',
+      'All Transports',
+      'All entry tickets'
+    ],
+    exclusions: [
+      'Personal Expenses',
+      'Flight Tickets',
+      'Travel Insurance',
+      'Lunch & Dinner',
+      'Optional activities'
+    ]
   },
   {
     name: 'Bali, Indonesia',

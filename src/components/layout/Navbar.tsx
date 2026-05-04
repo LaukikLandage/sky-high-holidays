@@ -268,7 +268,7 @@ export function Navbar() {
             </div>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)} className="mt-auto mb-12">
               <button className="w-full bg-[#FF7A00] text-white py-6 rounded-[2rem] font-black text-xl uppercase tracking-widest shadow-2xl shadow-orange-200">
-                Enquire Now
+                Book Now
               </button>
             </Link>
           </motion.div>

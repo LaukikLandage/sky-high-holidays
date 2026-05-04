@@ -108,7 +108,7 @@ export function DestinationDetailPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Enquiry Data:', formData);
-    alert('Thank you for your enquiry! Our travel experts will get back to you within 24 hours.');
+    alert('Thank you for your booking request! Our travel experts will get back to you within 24 hours.');
   };
 
   return (
@@ -231,122 +231,6 @@ export function DestinationDetailPage() {
                     <div className="w-12 h-1 bg-[#FF7A00] mx-auto mt-3 rounded-full"></div>
                   </div>
                   <div className="max-w-4xl mx-auto">
-                    {/* Premium Hotel Stay Module */}
-                    {(() => {
-                      const hotel = destination.hotelStay || {
-                        name: 'Premium Partner Hotel',
-                        roomType: 'Deluxe Category Room',
-                        nights: parseInt(destination.duration?.split(' ')[0]) || 4,
-                        meals: 'Daily Breakfast Included',
-                        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200',
-                        mapQuery: destination.name
-                      };
-                      const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(hotel.mapQuery || hotel.name)}&output=embed`;
-                      return (
-                        <>
-                          <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5 }}
-                            className="bg-white rounded-[20px] overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100 mb-10 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)] transition-shadow duration-500"
-                          >
-                            {/* 2-Column: Image + Details */}
-                            <div className="grid grid-cols-1 md:grid-cols-2">
-                              {/* Hotel Image */}
-                              <div className="relative aspect-[16/9] md:aspect-auto overflow-hidden group">
-                                <img 
-                                  src={hotel.image || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'}
-                                  alt={hotel.name}
-                                  loading="lazy"
-                                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                />
-                                {/* Gradient overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-                                {/* Featured Stay badge */}
-                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#FF7A00] text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                                  <Bed className="w-3.5 h-3.5" />
-                                  Featured Stay
-                                </div>
-                                {/* Hotel name overlay on image */}
-                                <div className="absolute bottom-4 left-4 right-4">
-                                  <h4 className="text-white text-xl font-bold drop-shadow-lg">{hotel.name}</h4>
-                                </div>
-                              </div>
-
-                              {/* Hotel Details */}
-                              <div className="p-6 md:p-8 flex flex-col justify-center">
-                                <h4 className="text-xs font-black uppercase tracking-[0.25em] text-[#FF7A00] mb-6">Hotel Stay Details</h4>
-                                <div className="space-y-5">
-                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                                      <span className="text-lg">🏨</span>
-                                    </div>
-                                    <div>
-                                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Hotel</div>
-                                      <div className="font-bold text-[#020617] text-sm">{hotel.name}</div>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                                      <span className="text-lg">🛏️</span>
-                                    </div>
-                                    <div>
-                                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Room Type</div>
-                                      <div className="font-bold text-[#020617] text-sm">{hotel.roomType}</div>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                                      <span className="text-lg">🌙</span>
-                                    </div>
-                                    <div>
-                                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Duration</div>
-                                      <div className="font-bold text-[#020617] text-sm">{hotel.nights} Nights Stay</div>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                                      <span className="text-lg">🍽️</span>
-                                    </div>
-                                    <div>
-                                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Meals</div>
-                                      <div className="font-bold text-[#020617] text-sm">{hotel.meals}</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </motion.div>
-
-                          {/* Google Maps — Separate Card */}
-                          <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.1 }}
-                            className="bg-white rounded-[20px] overflow-hidden shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-100 mb-10 hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.12)] transition-shadow duration-500"
-                          >
-                            <div className="px-6 pt-6 pb-3">
-                              <h4 className="text-xs font-black uppercase tracking-[0.25em] text-[#FF7A00]">Hotel Location</h4>
-                            </div>
-                            <div className="w-full h-[220px] md:h-[280px] rounded-b-[20px] overflow-hidden">
-                              <iframe 
-                                src={mapSrc}
-                                width="100%" 
-                                height="100%" 
-                                style={{ border: 0 }} 
-                                allowFullScreen 
-                                loading="lazy" 
-                                referrerPolicy="no-referrer-when-downgrade"
-                                className="grayscale-[30%] hover:grayscale-0 transition-all duration-500"
-                                title={`${hotel.name} Location`}
-                              />
-                            </div>
-                          </motion.div>
-                        </>
-                      );
-                    })()}
 
                     {destination.itinerary.map((item) => (
                       <AccordionItem 
@@ -434,14 +318,119 @@ export function DestinationDetailPage() {
           <div className="lg:col-span-5 xl:col-span-5">
             <div className="lg:sticky lg:top-32 space-y-6">
               
-              {/* Package Poster Image */}
-              <div className="w-full aspect-[4/5] bg-gray-100 rounded-[24px] overflow-hidden shadow-2xl border-4 border-white group relative">
-                <img 
-                  src={destination.posterImage || destination.image} 
-                  alt={`${destination.name} Package Poster`} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </div>
+              {/* Premium Hotel Stay Module */}
+              {(() => {
+                const hotel = destination.hotelStay || {
+                  name: 'Premium Partner Hotel',
+                  roomType: 'Deluxe Category Room',
+                  nights: parseInt(destination.duration?.split(' ')[0]) || 4,
+                  meals: 'Daily Breakfast Included',
+                  image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200',
+                  mapQuery: destination.name
+                };
+                const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(hotel.mapQuery || hotel.name)}&output=embed`;
+                return (
+                  <>
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5 }}
+                      className="bg-white rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 mb-6 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-shadow duration-500"
+                    >
+                      {/* Stacked Layout for Sidebar */}
+                      <div className="flex flex-col">
+                        {/* Hotel Image */}
+                        <div className="relative aspect-[4/3] overflow-hidden group">
+                          <img 
+                            src={hotel.image || 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'}
+                            alt={hotel.name}
+                            loading="lazy"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#FF7A00] text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+                            <Bed className="w-3.5 h-3.5" />
+                            Featured Stay
+                          </div>
+                          <div className="absolute bottom-4 left-4 right-4">
+                            <h4 className="text-white text-lg font-bold drop-shadow-lg">{hotel.name}</h4>
+                          </div>
+                        </div>
+
+                        {/* Hotel Details */}
+                        <div className="p-6">
+                          <h4 className="text-xs font-black uppercase tracking-[0.25em] text-[#FF7A00] mb-6">Hotel Stay Details</h4>
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-4">
+                              <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                                <span className="text-base">🏨</span>
+                              </div>
+                              <div>
+                                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Hotel</div>
+                                <div className="font-bold text-[#020617] text-sm">{hotel.name}</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                              <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                                <span className="text-base">🛏️</span>
+                              </div>
+                              <div>
+                                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Room</div>
+                                <div className="font-bold text-[#020617] text-sm">{hotel.roomType}</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                              <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                                <span className="text-base">🌙</span>
+                              </div>
+                              <div>
+                                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Duration</div>
+                                <div className="font-bold text-[#020617] text-sm">{hotel.nights} Nights</div>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                              <div className="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
+                                <span className="text-base">🍽️</span>
+                              </div>
+                              <div>
+                                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">Meals</div>
+                                <div className="font-bold text-[#020617] text-sm">{hotel.meals}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    {/* Google Maps Card */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: 0.1 }}
+                      className="bg-white rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 mb-6 hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-shadow duration-500"
+                    >
+                      <div className="px-6 pt-6 pb-3">
+                        <h4 className="text-xs font-black uppercase tracking-[0.25em] text-[#FF7A00]">Hotel Location</h4>
+                      </div>
+                      <div className="w-full h-[240px] rounded-b-[24px] overflow-hidden">
+                        <iframe 
+                          src={mapSrc}
+                          width="100%" 
+                          height="100%" 
+                          style={{ border: 0 }} 
+                          allowFullScreen 
+                          loading="lazy" 
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="grayscale-[30%] hover:grayscale-0 transition-all duration-500"
+                          title={`${hotel.name} Location`}
+                        />
+                      </div>
+                    </motion.div>
+                  </>
+                );
+              })()}
 
               {/* Share Feature */}
               <div className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100 text-center">
@@ -483,7 +472,7 @@ export function DestinationDetailPage() {
               {/* Enquiry Form */}
               <div className="bg-white rounded-[20px] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100">
                 <div className="mb-8 text-center">
-                  <h2 className="text-2xl font-semibold text-[#020617] mb-2 font-poppins">Enquire Now</h2>
+                  <h2 className="text-2xl font-semibold text-[#020617] mb-2 font-poppins">Book Now</h2>
                   <div className="w-12 h-[3px] bg-[#FF7A00] rounded-full mx-auto" />
                 </div>
 
@@ -544,7 +533,7 @@ export function DestinationDetailPage() {
                     type="submit"
                     className="w-full h-14 rounded-full bg-[#020617] text-white hover:bg-[#FF7A00] hover:text-[#020617] font-bold uppercase tracking-[0.1em] text-sm transition-all duration-300 mt-6"
                   >
-                    Send Enquiry
+                    Book Now
                   </Button>
                 </form>
 

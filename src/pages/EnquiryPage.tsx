@@ -48,7 +48,7 @@ export default function EnquiryPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <SectionHeader 
-          subtitle="ENQUIRY FORM"
+          subtitle="BOOKING FORM"
           title={formData.destination ? `Plan Your Trip to ${formData.destination}` : 'Plan Your Dream Trip'}
         />
         <motion.div
@@ -192,7 +192,7 @@ export default function EnquiryPage() {
                 size="lg"
                 className="w-full h-16 rounded-full text-lg font-black uppercase tracking-widest shadow-2xl hover:shadow-orange-200 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
-                Submit Enquiry
+                Book Now
                 <Send className="w-5 h-5 ml-3" />
               </Button>
             </form>
