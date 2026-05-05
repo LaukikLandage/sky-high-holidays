@@ -13,7 +13,7 @@ export const DESTINATIONS = [
     name: 'Dubai, UAE',
     slug: 'dubai-uae',
     location: 'Middle East',
-    price: '₹99,999',
+    price: '₹35,000',
     rating: 4.9,
     image: '/images/1_Destinations/International/Dubai/cover/dubai-cover.jpeg',
     duration: '5 Days / 4 Nights',
@@ -52,11 +52,46 @@ export const DESTINATIONS = [
     name: 'Bali, Indonesia',
     slug: 'bali-indonesia',
     location: 'Southeast Asia',
-    price: '₹79,999',
+    price: '₹32,000',
     rating: 4.8,
-    image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200',
-    duration: '7 Days',
-    type: 'international'
+    image: '/images/1_Destinations/International/Bali/cover/bali-cover.jpeg',
+    gallery: [
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1573790387438-4da905839391?auto=format&fit=crop&q=80&w=1200',
+      'https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?auto=format&fit=crop&q=80&w=1200'
+    ],
+    duration: '5 Days / 4 Nights',
+    type: 'international',
+    hotelStay: {
+      name: '2 Nights - Alankara Villa & Spa Ubud, 2 Nights - Bliss Surfer',
+      roomType: 'Alankara: One Bedroom Pool Villa, Bliss Surfer: Deluxe Room',
+      nights: 4,
+      meals: 'Daily Breakfast',
+      image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200',
+      mapQuery: 'Alankara Villa & Spa Ubud'
+    },
+    itinerary: [
+      { day: 1, title: 'Arrival & Leisure', content: 'Arrive at your destination and enjoy a relaxed day at leisure—unwind, explore nearby surroundings, or indulge in hotel amenities at your own pace.' },
+      { day: 2, title: 'Mount Batur View & ATV Ride', content: 'Experience breathtaking views of Mount Batur followed by an exciting 90-minute ATV ride through rugged trails and scenic landscapes.' },
+      { day: 3, title: 'Nusa Penida West Tour', content: 'Discover the stunning west side of Nusa Penida—visit iconic cliffs, crystal-clear waters, and breathtaking viewpoints on this unforgettable island tour.' },
+      { day: 4, title: 'Bedugul Tour with Handara Gate', content: 'Explore the scenic highlands of Bali with a Bedugul tour—visit serene temples, lush landscapes, and capture iconic photos at the famous Handara Gate' },
+      { day: 5, title: 'Departure Transfers to Airport', content: 'Smooth hotel-to-airport transfer, hassle-free departure, comfortable ride, timely pickup, stress-free end to your journey ✨' }
+    ],
+    inclusions: [
+      'Bali Visa',
+      'Hotel Accommodation',
+      'Daily Breakfast',
+      'All Transports',
+      'All entry tickets'
+    ],
+    exclusions: [
+      'Personal Expenses',
+      'Flight Tickets',
+      'Travel Insurance',
+      'Lunch & Dinner',
+      'Optional activities'
+    ]
   },
   {
     name: 'Thailand',
