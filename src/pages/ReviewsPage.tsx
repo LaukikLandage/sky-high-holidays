@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PlayCircle } from 'lucide-react';
 import { SectionHeader } from '../components/ui/SectionHeader';
