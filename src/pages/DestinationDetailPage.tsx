@@ -374,7 +374,7 @@ export function DestinationDetailPage() {
                         const container = document.getElementById('accommodation-carousel');
                         if (container) container.scrollBy({ left: -420, behavior: 'smooth' });
                       }}
-                      className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] hover:bg-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+                      className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] transition-all duration-300"
                     >
                       <ChevronLeft className="w-6 h-6" />
                     </button>
@@ -383,7 +383,7 @@ export function DestinationDetailPage() {
                         const container = document.getElementById('accommodation-carousel');
                         if (container) container.scrollBy({ left: 420, behavior: 'smooth' });
                       }}
-                      className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white/80 backdrop-blur-md border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] hover:bg-white transition-all duration-300 opacity-0 group-hover:opacity-100"
+                      className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] transition-all duration-300"
                     >
                       <ChevronRight className="w-6 h-6" />
                     </button>
@@ -426,50 +426,54 @@ export function DestinationDetailPage() {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
                                 loading="lazy"
                               />
-                              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 text-center shadow-lg border border-white/20">
+                              <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2 text-center shadow-lg border border-white/20 z-10">
                                 <span className="text-xl font-bold text-[#FF7A00] block leading-none">{stay.nights}</span>
                                 <span className="text-[8px] font-black text-gray-500 uppercase tracking-widest mt-1 block">Nights</span>
                               </div>
                             </div>
 
-                            <div className="p-8 md:p-10 flex flex-col justify-between flex-grow">
-                              <div className="space-y-6">
+                            {/* Premium Dark Content Panel */}
+                            <div className="p-8 md:p-10 flex flex-col justify-between flex-grow bg-[#0f172a] relative">
+                              {/* Subtle Gradient Overlay for Depth */}
+                              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
+                              
+                              <div className="relative z-10 space-y-8">
                                 {/* Hotel Name & Location Info */}
                                 <div>
-                                  <span className="text-[10px] font-black uppercase tracking-widest text-[#FF7A00] mb-2 block">Stay Information</span>
-                                  <h4 className="text-xl md:text-2xl font-bold text-[#020617] leading-tight mb-2">
+                                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FF7A00] mb-3 block">Premier Stay</span>
+                                  <h4 className="text-xl md:text-2xl font-bold text-white leading-tight mb-2 tracking-tight">
                                     {stay.name}
                                   </h4>
                                   {(stay.city || stay.country) && (
-                                    <div className="flex items-center gap-1.5 text-gray-400">
-                                      <MapPin className="w-3 h-3" />
-                                      <span className="text-[11px] font-semibold uppercase tracking-wider">
+                                    <div className="flex items-center gap-1.5 text-slate-400">
+                                      <MapPin className="w-3.5 h-3.5 opacity-70" />
+                                      <span className="text-[11px] font-medium uppercase tracking-wider">
                                         {[stay.city, stay.country].filter(Boolean).join(', ')}
                                       </span>
                                     </div>
                                   )}
                                 </div>
 
-                                <div className="pt-2 space-y-5">
-                                  <div className="flex items-center gap-3">
-                                    <div className="p-2.5 rounded-xl bg-orange-50/50">
+                                <div className="space-y-6">
+                                  <div className="flex items-center gap-4 group/item">
+                                    <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.05] group-hover/item:bg-orange-500/10 transition-colors duration-300">
                                       <Bed className="w-5 h-5 text-[#FF7A00]" />
                                     </div>
                                     <div>
-                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Room Selection</span>
-                                      <span className="text-sm md:text-base font-semibold text-gray-600">
+                                      <span className="text-[10px] font-black text-slate-500 block uppercase tracking-widest mb-1">Room Selection</span>
+                                      <span className="text-sm md:text-base font-medium text-slate-200">
                                         {stay.roomType}
                                       </span>
                                     </div>
                                   </div>
 
-                                  <div className="flex items-center gap-3">
-                                    <div className="p-2.5 rounded-xl bg-orange-50/50">
+                                  <div className="flex items-center gap-4 group/item">
+                                    <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.05] group-hover/item:bg-orange-500/10 transition-colors duration-300">
                                       <Utensils className="w-5 h-5 text-[#FF7A00]" />
                                     </div>
                                     <div>
-                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Meal Plan</span>
-                                      <span className="text-sm md:text-base font-semibold text-gray-600">
+                                      <span className="text-[10px] font-black text-slate-500 block uppercase tracking-widest mb-1">Meal Plan</span>
+                                      <span className="text-sm md:text-base font-medium text-slate-200">
                                         {stay.meals || 'Daily Breakfast Included'}
                                       </span>
                                     </div>
@@ -477,8 +481,8 @@ export function DestinationDetailPage() {
                                 </div>
                               </div>
 
-                              <div className="mt-8 pt-6 border-t border-gray-50">
-                                <p className="text-[10px] font-medium text-gray-400 italic leading-relaxed">
+                              <div className="mt-10 pt-6 border-t border-white/[0.05] relative z-10">
+                                <p className="text-[10px] font-medium text-slate-500 italic leading-relaxed">
                                   Note: Hotels are subject to availability. Similar category hotels may be provided if unavailable.
                                 </p>
                               </div>
