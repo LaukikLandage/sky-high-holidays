@@ -9,8 +9,8 @@ export function ContactPage() {
     mobileNumber: '',
     country: '',
     travelDates: '',
-    adults: '',
-    children: '',
+    adults: '2',
+    children: '0',
     message: ''
   });
 
@@ -50,9 +50,9 @@ export function ContactPage() {
           onSubmit={handleSubmit}
           className="space-y-8 md:space-y-12"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8 md:gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-12 md:gap-y-16">
             {/* Left Column */}
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-12 md:space-y-16">
               <FormInput 
                 label="Full name*" 
                 placeholder="John Doe" 
@@ -77,7 +77,7 @@ export function ContactPage() {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-12 md:space-y-16">
               <FormInput 
                 label="Email address*" 
                 placeholder="you@domain.com" 
@@ -104,22 +104,65 @@ export function ContactPage() {
                   <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-focus-within:text-[#FF7A00] transition-colors" />
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <FormInput 
-                  label="Adults*" 
-                  placeholder="e.g. 2" 
-                  value={formData.adults}
-                  onChange={(v: string) => setFormData({...formData, adults: v})}
-                  required
-                  type="number"
-                />
-                <FormInput 
-                  label="Children" 
-                  placeholder="e.g. 1" 
-                  value={formData.children}
-                  onChange={(v: string) => setFormData({...formData, children: v})}
-                  type="number"
-                />
+
+              {/* No. of Travellers Section */}
+              <div className="space-y-4 md:space-y-6">
+                <label className="text-[11px] md:text-sm font-bold text-[#020617] mb-1 md:mb-2">No. of Travellers</label>
+                <div className="flex flex-col sm:flex-row gap-6 md:gap-8 lg:gap-10">
+                  {/* Adults Counter */}
+                  <div className="flex-1 space-y-3">
+                    <div className="flex items-center justify-between gap-2 min-h-[20px]">
+                      <span className="text-[11px] font-bold text-gray-700 uppercase tracking-tight">Adults</span>
+                      <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Above 12 Yrs</span>
+                    </div>
+                    <div className="flex items-center justify-between w-full bg-white border border-gray-100 rounded-[20px] p-2 shadow-sm hover:shadow-md hover:border-orange-100 transition-all duration-300">
+                      <button 
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, adults: Math.max(1, Number(prev.adults) - 1).toString() }))}
+                        className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                      >
+                        <span className="text-xl font-light">−</span>
+                      </button>
+                      <span className="text-xl font-bold text-[#020617] w-10 text-center tabular-nums">
+                        {formData.adults.padStart(2, '0')}
+                      </span>
+                      <button 
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, adults: (Number(prev.adults) + 1).toString() }))}
+                        className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                      >
+                        <span className="text-xl font-light">+</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Children Counter */}
+                  <div className="flex-1 space-y-3">
+                    <div className="flex items-center justify-between gap-2 min-h-[20px]">
+                      <span className="text-[11px] font-bold text-gray-700 uppercase tracking-tight">Children</span>
+                      <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Below 12 Yrs</span>
+                    </div>
+                    <div className="flex items-center justify-between w-full bg-white border border-gray-100 rounded-[20px] p-2 shadow-sm hover:shadow-md hover:border-orange-100 transition-all duration-300">
+                      <button 
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, children: Math.max(0, Number(prev.children) - 1).toString() }))}
+                        className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                      >
+                        <span className="text-xl font-light">−</span>
+                      </button>
+                      <span className="text-xl font-bold text-[#020617] w-10 text-center tabular-nums">
+                        {formData.children.padStart(2, '0')}
+                      </span>
+                      <button 
+                        type="button"
+                        onClick={() => setFormData(prev => ({ ...prev, children: (Number(prev.children) + 1).toString() }))}
+                        className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                      >
+                        <span className="text-xl font-light">+</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

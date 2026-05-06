@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Calendar, Users, MessageSquare, Phone, User, Mail } from 'lucide-react';
+import { Send, MapPin, Calendar, MessageSquare, Phone, User, Mail } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SectionHeader } from '../components/ui/SectionHeader';
 
@@ -139,9 +139,9 @@ export default function EnquiryPage() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-8 items-start">
                 {/* Travel Date */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Travel Date</label>
                   <div className="relative group">
                     <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#FF7A00] transition-colors" />
@@ -155,36 +155,63 @@ export default function EnquiryPage() {
                   </div>
                 </div>
 
-                {/* Adults */}
-                <div className="space-y-2">
-                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Adults*</label>
-                  <div className="relative group">
-                    <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#FF7A00] transition-colors" />
-                    <input
-                      required
-                      type="number"
-                      min="1"
-                      placeholder="2"
-                      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#FF7A00] focus:ring-4 focus:ring-orange-50 outline-none transition-all font-medium"
-                      value={formData.adults}
-                      onChange={e => setFormData({ ...formData, adults: e.target.value })}
-                    />
-                  </div>
-                </div>
+                {/* No. of Travellers Section */}
+                <div className="space-y-3">
+                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">No. of Travellers</label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Adults Counter */}
+                    <div className="bg-gray-50/50 rounded-2xl p-4 border border-gray-100 flex flex-col gap-3 hover:bg-white hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-bold text-gray-700">Adults</span>
+                        <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter">Above 12 Yrs</span>
+                      </div>
+                      <div className="flex items-center justify-between bg-white rounded-xl p-1 shadow-sm border border-gray-100">
+                        <button 
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, adults: Math.max(1, Number(prev.adults) - 1).toString() }))}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                        >
+                          <span className="text-lg font-light">−</span>
+                        </button>
+                        <span className="text-lg font-bold text-[#020617] tabular-nums">
+                          {formData.adults.padStart(2, '0')}
+                        </span>
+                        <button 
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, adults: (Number(prev.adults) + 1).toString() }))}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                        >
+                          <span className="text-lg font-light">+</span>
+                        </button>
+                      </div>
+                    </div>
 
-                {/* Children */}
-                <div className="space-y-2">
-                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Children</label>
-                  <div className="relative group">
-                    <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#FF7A00] transition-colors" />
-                    <input
-                      type="number"
-                      min="0"
-                      placeholder="0"
-                      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#FF7A00] focus:ring-4 focus:ring-orange-50 outline-none transition-all font-medium"
-                      value={formData.children}
-                      onChange={e => setFormData({ ...formData, children: e.target.value })}
-                    />
+                    {/* Children Counter */}
+                    <div className="bg-gray-50/50 rounded-2xl p-4 border border-gray-100 flex flex-col gap-3 hover:bg-white hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-bold text-gray-700">Children</span>
+                        <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter">Below 12 Yrs</span>
+                      </div>
+                      <div className="flex items-center justify-between bg-white rounded-xl p-1 shadow-sm border border-gray-100">
+                        <button 
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, children: Math.max(0, Number(prev.children) - 1).toString() }))}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                        >
+                          <span className="text-lg font-light">−</span>
+                        </button>
+                        <span className="text-lg font-bold text-[#020617] tabular-nums">
+                          {formData.children.padStart(2, '0')}
+                        </span>
+                        <button 
+                          type="button"
+                          onClick={() => setFormData(prev => ({ ...prev, children: (Number(prev.children) + 1).toString() }))}
+                          className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-50 text-gray-400 hover:text-[#FF7A00] transition-all"
+                        >
+                          <span className="text-lg font-light">+</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
