@@ -14,7 +14,8 @@ import {
   Calendar,
   CheckCircle2,
   XCircle,
-  ShieldAlert
+  ShieldAlert,
+  Bed
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { useDestinationStore, Destination } from '@/store/useDestinationStore';
@@ -40,8 +41,8 @@ export default function AdminEditDestination() {
       overview: '',
       highlights: [''],
       itinerary: [{ day: 1, title: '', content: '' }],
-      inclusions: [''],
-      exclusions: [''],
+      inclusions: [{ text: '', icon: 'CheckCircle2' }],
+      exclusions: [{ text: '', icon: 'XCircle' }],
       cancellationPolicy: [''],
       paymentPolicy: [''],
       terms: '',
@@ -67,6 +68,11 @@ export default function AdminEditDestination() {
   const { fields: exclusionFields, append: appendExclusion, remove: removeExclusion } = useFieldArray({
     control,
     name: "exclusions" as any
+  });
+  
+  const { fields: stayFields, append: appendStay, remove: removeStay } = useFieldArray({
+    control,
+    name: "accommodationDetails" as any
   });
 
   const onSubmit = (data: Destination) => {
@@ -143,6 +149,7 @@ export default function AdminEditDestination() {
               <TabButton id="basic" label="Basic Info" icon={FileText} />
               <TabButton id="images" label="Images & Gallery" icon={ImageIcon} />
               <TabButton id="itinerary" label="Itinerary" icon={Calendar} />
+              <TabButton id="stays" label="Accommodation Details" icon={Bed} />
               <TabButton id="details" label="Inclusions/Exclusions" icon={CheckCircle2} />
               <TabButton id="policies" label="Policies" icon={ShieldAlert} />
             </div>
@@ -259,37 +266,125 @@ export default function AdminEditDestination() {
                 </div>
               )}
 
+              {/* ACCOMMODATION DETAILS TAB */}
+              {activeTab === 'stays' && (
+                <div className="space-y-8">
+                  {stayFields.map((field, index) => (
+                    <div key={field.id} className="p-8 rounded-[24px] bg-gray-50 space-y-6 relative border border-gray-100">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-[#020617] text-white flex items-center justify-center">
+                            <Bed className="w-5 h-5 text-[#FF7A00]" />
+                          </div>
+                          <h4 className="font-black text-[#020617] uppercase tracking-widest text-xs">Accommodation Unit #{index + 1}</h4>
+                        </div>
+                        <button type="button" onClick={() => removeStay(index)} className="w-10 h-10 rounded-xl bg-red-100 text-red-500 hover:bg-red-200 flex items-center justify-center transition-colors">
+                          <Trash2 className="w-5 h-5" />
+                        </button>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">City</label>
+                          <input {...register(`accommodationDetails.${index}.city` as any)} placeholder="e.g. Ubud" className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Country</label>
+                          <input {...register(`accommodationDetails.${index}.country` as any)} placeholder="e.g. Indonesia" className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Hotel Name</label>
+                          <input {...register(`accommodationDetails.${index}.name` as any)} placeholder="e.g. The Lokha Ubud Resort" className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Room Type</label>
+                          <input {...register(`accommodationDetails.${index}.roomType` as any)} placeholder="e.g. Pool Villa" className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Number of Nights</label>
+                          <input type="number" {...register(`accommodationDetails.${index}.nights` as any)} className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Meals Included</label>
+                          <input {...register(`accommodationDetails.${index}.meals` as any)} placeholder="e.g. Daily Breakfast" className="w-full p-4 rounded-xl bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                        </div>
+                        <div className="md:col-span-2 flex items-center gap-3 bg-white p-4 rounded-xl">
+                          <input type="checkbox" {...register(`accommodationDetails.${index}.similarAvailable` as any)} id={`similar-${index}`} className="w-5 h-5 rounded accent-[#FF7A00]" />
+                          <label htmlFor={`similar-${index}`} className="text-xs font-bold text-gray-600 cursor-pointer">"or Similar" category hotels may be provided</label>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <button type="button" onClick={() => appendStay({ city: '', country: '', name: '', roomType: '', nights: 1, meals: '', similarAvailable: true })} className="w-full py-8 rounded-[24px] border-2 border-dashed border-gray-200 text-gray-400 font-bold hover:border-[#FF7A00] hover:text-[#FF7A00] transition-all flex flex-col items-center justify-center gap-3 bg-white hover:bg-orange-50/10">
+                    <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-300 group-hover:text-[#FF7A00] transition-colors">
+                      <Plus className="w-6 h-6" />
+                    </div>
+                    <span className="uppercase tracking-widest text-xs font-black">Add New Accommodation Unit</span>
+                  </button>
+                </div>
+              )}
+
+
               {/* DETAILS TAB */}
               {activeTab === 'details' && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                  <div className="space-y-4">
-                    <label className="text-xs font-black uppercase tracking-widest text-gray-400 flex items-center gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-green-500" /> Inclusions
-                    </label>
-                    {inclusionFields.map((field, index) => (
-                      <div key={field.id} className="flex gap-2">
-                        <input {...register(`inclusions.${index}`)} className="flex-1 p-4 rounded-xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold" />
-                        <button type="button" onClick={() => removeInclusion(index)} className="shrink-0 text-red-300 hover:text-red-500">
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
-                    <button type="button" onClick={() => appendInclusion('')} className="text-[#FF7A00] font-black text-[10px] uppercase tracking-widest hover:underline">+ Add Inclusion</button>
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500" /> Inclusions
+                      </label>
+                      <button type="button" onClick={() => appendInclusion({ text: '', icon: 'CheckCircle2' })} className="text-[#FF7A00] font-black text-[10px] uppercase tracking-widest hover:underline">+ Add Inclusion</button>
+                    </div>
+                    <div className="space-y-3">
+                      {inclusionFields.map((field, index) => (
+                        <div key={field.id} className="p-4 rounded-xl bg-gray-50 border border-gray-100 space-y-3">
+                          <div className="flex gap-2">
+                            <input {...register(`inclusions.${index}.text` as any)} placeholder="Inclusion Text" className="flex-1 p-3 rounded-lg bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                            <button type="button" onClick={() => removeInclusion(index)} className="w-10 h-10 rounded-lg bg-red-100 text-red-500 hover:bg-red-200 flex items-center justify-center transition-colors">
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                          <select {...register(`inclusions.${index}.icon` as any)} className="w-full p-3 rounded-lg bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-xs">
+                            <option value="CheckCircle2">Generic Inclusion (Check)</option>
+                            <option value="Hotel">Hotel / Accommodation</option>
+                            <option value="Utensils">Meals / Food</option>
+                            <option value="Plane">Flights / Airfare</option>
+                            <option value="CarTaxiFront">Transport / Transfers</option>
+                            <option value="Ticket">Entry Tickets / Tours</option>
+                            <option value="BadgeCheck">Visa / Certificate</option>
+                          </select>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <label className="text-xs font-black uppercase tracking-widest text-gray-400 flex items-center gap-2">
-                      <XCircle className="w-4 h-4 text-red-500" /> Exclusions
-                    </label>
-                    {exclusionFields.map((field, index) => (
-                      <div key={field.id} className="flex gap-2">
-                        <input {...register(`exclusions.${index}`)} className="flex-1 p-4 rounded-xl bg-gray-50 border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold" />
-                        <button type="button" onClick={() => removeExclusion(index)} className="shrink-0 text-red-300 hover:text-red-500">
-                          <Trash2 className="w-4 h-4" />
-                        </button>
-                      </div>
-                    ))}
-                    <button type="button" onClick={() => appendExclusion('')} className="text-[#FF7A00] font-black text-[10px] uppercase tracking-widest hover:underline">+ Add Exclusion</button>
+                  <div className="space-y-6">
+                    <div className="flex items-center justify-between">
+                      <label className="text-xs font-black uppercase tracking-widest text-gray-400 flex items-center gap-2">
+                        <XCircle className="w-4 h-4 text-red-500" /> Exclusions
+                      </label>
+                      <button type="button" onClick={() => appendExclusion({ text: '', icon: 'XCircle' })} className="text-[#FF7A00] font-black text-[10px] uppercase tracking-widest hover:underline">+ Add Exclusion</button>
+                    </div>
+                    <div className="space-y-3">
+                      {exclusionFields.map((field, index) => (
+                        <div key={field.id} className="p-4 rounded-xl bg-gray-50 border border-gray-100 space-y-3">
+                          <div className="flex gap-2">
+                            <input {...register(`exclusions.${index}.text` as any)} placeholder="Exclusion Text" className="flex-1 p-3 rounded-lg bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-sm" />
+                            <button type="button" onClick={() => removeExclusion(index)} className="w-10 h-10 rounded-lg bg-red-100 text-red-500 hover:bg-red-200 flex items-center justify-center transition-colors">
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                          <select {...register(`exclusions.${index}.icon` as any)} className="w-full p-3 rounded-lg bg-white border-none outline-none focus:ring-2 focus:ring-[#FF7A00]/20 font-bold text-xs">
+                            <option value="XCircle">Generic Exclusion (X)</option>
+                            <option value="ShieldX">Insurance</option>
+                            <option value="Wallet">Personal Expenses / Fees</option>
+                            <option value="Utensils">Food / Drinks</option>
+                            <option value="Plane">Flights</option>
+                            <option value="CircleOff">Optional Activities</option>
+                          </select>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

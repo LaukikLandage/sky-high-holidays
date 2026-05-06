@@ -7,7 +7,18 @@ export const DESTINATIONS = [
     rating: 5.0,
     image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&q=80&w=1200',
     duration: '7 Days',
-    type: 'international'
+    type: 'international',
+    inclusions: [
+      { text: "Overwater Villa Stay", icon: "Hotel" },
+      { text: "All-Inclusive Meals", icon: "Utensils" },
+      { text: "Speedboat Transfers", icon: "CarTaxiFront" },
+      { text: "Snorkeling Equipment", icon: "Ticket" }
+    ],
+    exclusions: [
+      { text: "International Flights", icon: "Plane" },
+      { text: "Premium Drinks", icon: "Utensils" },
+      { text: "Spa Treatments", icon: "BadgeCheck" }
+    ]
   },
   {
     name: 'Dubai, UAE',
@@ -18,14 +29,17 @@ export const DESTINATIONS = [
     image: '/images/1_Destinations/International/Dubai/cover/dubai-cover.jpeg',
     duration: '5 Days / 4 Nights',
     type: 'international',
-    hotelStay: {
-      name: 'Admiral Plaza Bur Dubai',
-      roomType: 'Standard Room',
-      nights: 4,
-      meals: 'Daily Breakfast',
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200',
-      mapQuery: 'Admiral Plaza Hotel Dubai'
-    },
+    accommodationDetails: [
+      {
+        city: 'Dubai',
+        country: 'UAE',
+        name: 'Admiral Plaza Bur Dubai',
+        roomType: 'Standard Room',
+        nights: 4,
+        meals: 'Daily Breakfast',
+        similarAvailable: true
+      }
+    ],
     itinerary: [
       { day: 1, title: 'Arrival & Cruise Dinner', content: 'Welcome to your dream destination! Transfer to hotel and evening Dinner at Cruise.' },
       { day: 2, title: 'Dubai Tour & Burj Khalifa', content: 'Experience the best of Dubai with a guided city tour and discover modern marvels, cultural landmarks and visit to the iconic Burj Khalifa skyline views all in one unforgettable journey.' },
@@ -34,18 +48,19 @@ export const DESTINATIONS = [
       { day: 5, title: 'Departure Transfers to Airport', content: 'Smooth hotel-to-airport transfer, hassle-free departure, comfortable ride, timely pickup, stress-free end to your journey' }
     ],
     inclusions: [
-      'Dubai Visa',
-      'Hotel Accommodation',
-      'Daily Breakfast',
-      'All Transports',
-      'All entry tickets'
+      { text: "04 Nights Accommodation in Dubai", icon: "Hotel" },
+      { text: "Daily Breakfast", icon: "Utensils" },
+      { text: "Marina Dhow Cruise with Dinner", icon: "Ticket" },
+      { text: "Desert Safari with BBQ Dinner", icon: "Ticket" },
+      { text: "Half-day Dubai City Tour", icon: "BadgeCheck" },
+      { text: "Return Airport Transfers (PVT)", icon: "CarTaxiFront" }
     ],
     exclusions: [
-      'Personal Expenses',
-      'Flight Tickets',
-      'Travel Insurance',
-      'Lunch & Dinner',
-      'Optional activities'
+      { text: "Flight Tickets", icon: "Plane" },
+      { text: "UAE Visa Charges", icon: "BadgeCheck" },
+      { text: "Tourism Dirham Fee", icon: "Wallet" },
+      { text: "Any Tips or Gratuities", icon: "Wallet" },
+      { text: "Items of personal nature", icon: "Wallet" }
     ]
   },
   {
@@ -63,14 +78,26 @@ export const DESTINATIONS = [
     ],
     duration: '5 Days / 4 Nights',
     type: 'international',
-    hotelStay: {
-      name: '2 Nights - Alankara Villa & Spa Ubud, 2 Nights - Bliss Surfer',
-      roomType: 'Alankara: One Bedroom Pool Villa, Bliss Surfer: Deluxe Room',
-      nights: 4,
-      meals: 'Daily Breakfast',
-      image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&q=80&w=1200',
-      mapQuery: 'Alankara Villa & Spa Ubud'
-    },
+    accommodationDetails: [
+      {
+        city: 'Ubud',
+        country: 'Indonesia',
+        name: 'Alankara Villa & Spa Ubud',
+        roomType: 'One Bedroom Pool Villa',
+        nights: 2,
+        meals: 'Daily Breakfast',
+        similarAvailable: true
+      },
+      {
+        city: 'Kuta/Legian',
+        country: 'Indonesia',
+        name: 'Bliss Surfer Hotel',
+        roomType: 'Deluxe Room',
+        nights: 2,
+        meals: 'Daily Breakfast',
+        similarAvailable: true
+      }
+    ],
     itinerary: [
       { day: 1, title: 'Arrival & Leisure', content: 'Arrive at your destination and enjoy a relaxed day at leisure—unwind, explore nearby surroundings, or indulge in hotel amenities at your own pace.' },
       { day: 2, title: 'Mount Batur View & ATV Ride', content: 'Experience breathtaking views of Mount Batur followed by an exciting 90-minute ATV ride through rugged trails and scenic landscapes.' },
@@ -79,18 +106,19 @@ export const DESTINATIONS = [
       { day: 5, title: 'Departure Transfers to Airport', content: 'Smooth hotel-to-airport transfer, hassle-free departure, comfortable ride, timely pickup, stress-free end to your journey ✨' }
     ],
     inclusions: [
-      'Bali Visa',
-      'Hotel Accommodation',
-      'Daily Breakfast',
-      'All Transports',
-      'All entry tickets'
+      { text: "02 Nights Stay in Ubud", icon: "Hotel" },
+      { text: "02 Nights Stay in Kuta/Seminyak", icon: "Hotel" },
+      { text: "Daily Breakfast at Hotel", icon: "Utensils" },
+      { text: "Bali Swings (Instagrammable Tour)", icon: "Ticket" },
+      { text: "Private Airport Transfers", icon: "CarTaxiFront" },
+      { text: "Professional English Speaking Guide", icon: "BadgeCheck" }
     ],
     exclusions: [
-      'Personal Expenses',
-      'Flight Tickets',
-      'Travel Insurance',
-      'Lunch & Dinner',
-      'Optional activities'
+      { text: "International Flight Tickets", icon: "Plane" },
+      { text: "Bali Visa on Arrival", icon: "BadgeCheck" },
+      { text: "Lunch and Dinner", icon: "Utensils" },
+      { text: "Personal Expenses", icon: "Wallet" },
+      { text: "Travel Insurance", icon: "ShieldX" }
     ]
   },
   {
@@ -101,7 +129,17 @@ export const DESTINATIONS = [
     rating: 4.7,
     image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200',
     duration: '6 Days',
-    type: 'international'
+    type: 'international',
+    inclusions: [
+      { text: "Bangkok & Pattaya Hotels", icon: "Hotel" },
+      { text: "Coral Island Tour", icon: "Ticket" },
+      { text: "Safari World & Marine Park", icon: "Ticket" },
+      { text: "Daily Breakfast", icon: "Utensils" }
+    ],
+    exclusions: [
+      { text: "Thailand Visa", icon: "BadgeCheck" },
+      { text: "Flight Tickets", icon: "Plane" }
+    ]
   },
   {
     name: 'Vietnam',
@@ -134,7 +172,17 @@ export const DOMESTIC_DESTINATIONS = [
     duration: '6 Days',
     rating: 4.9,
     image: 'https://images.unsplash.com/photo-1562016600-ece13e8ba570?auto=format&fit=crop&q=80&w=1200',
-    type: 'domestic'
+    type: 'domestic',
+    inclusions: [
+      { text: "Houseboat Stay in Srinagar", icon: "Hotel" },
+      { text: "Shikara Ride on Dal Lake", icon: "Ticket" },
+      { text: "Pahalgam & Gulmarg Tours", icon: "CarTaxiFront" },
+      { text: "Daily Breakfast & Dinner", icon: "Utensils" }
+    ],
+    exclusions: [
+      { text: "Gondola Ride Phase 2", icon: "Ticket" },
+      { text: "Pony Rides", icon: "CarTaxiFront" }
+    ]
   },
   {
     name: 'Himachal',

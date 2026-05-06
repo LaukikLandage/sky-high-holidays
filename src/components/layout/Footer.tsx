@@ -97,19 +97,40 @@ export function Footer() {
               className="max-w-4xl w-full h-auto opacity-80 hover:opacity-100 transition-opacity"
             />
           </div>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm font-medium text-center md:text-left">
-            <div>
-              © {new Date().getFullYear()} Sky High Holidays. All Rights Reserved.
+          <div className="flex flex-col md:flex-row items-center md:items-baseline justify-between gap-8 pt-8 border-t border-white/5">
+            {/* Left: Copyright */}
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-gray-500 text-center md:text-left">
+              © {new Date().getFullYear()} Sky High Holidays.
             </div>
-            <div className="flex items-center gap-1">
-              <span>Website by</span>
+
+            {/* Center: Powered By + Logo Below */}
+            <div className="flex flex-col items-center">
+              <a 
+                href="https://lenodellabs.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-3"
+              >
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-gray-500">
+                  Powered by <span className="text-gray-400">LenodelLabs.com</span>
+                </span>
+                <img 
+                  src="/lenodellabs-logo.png" 
+                  alt="Lenodel Labs" 
+                  className="h-7 w-auto block" 
+                />
+              </a>
+            </div>
+
+            {/* Right: Designed By */}
+            <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-gray-500 text-center md:text-right">
               <a 
                 href="https://laukiklandage.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-[#FF7A00] hover:underline transition-all duration-300"
+                className="hover:text-[#FF7A00] transition-colors"
               >
-                LaukikLandage.com
+                Designed by LaukikLandage.com
               </a>
             </div>
           </div>

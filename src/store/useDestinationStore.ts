@@ -9,12 +9,13 @@ export interface ItineraryItem {
 }
 
 export interface HotelStay {
+  city?: string;
+  country?: string;
   name: string;
   roomType: string;
   nights: number;
   meals: string;
-  image?: string;
-  mapQuery?: string;
+  similarAvailable?: boolean;
 }
 
 export interface Destination {
@@ -30,13 +31,13 @@ export interface Destination {
   overview: string;
   highlights: string[];
   itinerary: ItineraryItem[];
-  inclusions: string[];
-  exclusions: string[];
+  inclusions: { text: string; icon?: string }[];
+  exclusions: { text: string; icon?: string }[];
   cancellationPolicy: string[];
   paymentPolicy: string[];
   terms: string;
   type: 'international' | 'domestic';
-  hotelStay?: HotelStay;
+  accommodationDetails?: HotelStay[];
   isTrending?: boolean;
 }
 
@@ -67,21 +68,32 @@ const mapInitialData = (data: any[]): Destination[] => {
       { day: 2, title: 'City Exploration', content: 'Full day sightseeing tour of major landmarks.' },
       { day: 3, title: 'Local Experiences', content: 'Immerse yourself in the local culture and cuisine.' },
     ],
-    inclusions: d.inclusions || ['Round-trip Airfare', '4-Star Hotel Accommodation', 'Daily Breakfast', 'All Transfers'],
-    exclusions: d.exclusions || ['Personal Expenses', 'Travel Insurance', 'Lunches & Dinners', 'Optional Tours'],
+    inclusions: d.inclusions?.map((item: any) => typeof item === 'string' ? { text: item, icon: 'CheckCircle2' } : item) || [
+      { text: 'Round-trip Airfare', icon: 'Plane' },
+      { text: '4-Star Hotel Accommodation', icon: 'Hotel' },
+      { text: 'Daily Breakfast', icon: 'Utensils' },
+      { text: 'All Transfers', icon: 'CarTaxiFront' }
+    ],
+    exclusions: d.exclusions?.map((item: any) => typeof item === 'string' ? { text: item, icon: 'XCircle' } : item) || [
+      { text: 'Personal Expenses', icon: 'Wallet' },
+      { text: 'Travel Insurance', icon: 'ShieldX' },
+      { text: 'Lunches & Dinners', icon: 'Utensils' },
+      { text: 'Optional Tours', icon: 'CircleOff' }
+    ],
     cancellationPolicy: d.cancellationPolicy || ['30 days before: 20% charge', '15 days before: 50% charge', 'Less than 7 days: 100% charge'],
     paymentPolicy: d.paymentPolicy || ['25% deposit at booking', 'Remaining 75% 30 days before travel'],
     terms: d.terms || 'Prices are subject to availability at the time of booking. Standard terms and conditions apply.',
     type: d.type,
     isTrending: d.isTrending || d.type === 'international',
-    hotelStay: d.hotelStay || {
+    accommodationDetails: d.accommodationDetails || [d.hotelStay || {
+      city: d.location?.split(',')[0] || d.name,
+      country: d.location?.split(',')[1]?.trim() || (d.type === 'international' ? 'International' : 'India'),
       name: 'Premium Partner Hotel',
       roomType: 'Deluxe Category Room',
       nights: parseInt(d.duration?.split(' ')[0]) || 4,
       meals: 'Daily Breakfast Included',
-      image: `https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200`,
-      mapQuery: d.name
-    }
+      similarAvailable: true
+    }]
   }));
 };
 
