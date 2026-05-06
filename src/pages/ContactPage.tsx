@@ -21,7 +21,7 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-24 min-h-screen bg-white font-poppins selection:bg-orange-100 selection:text-[#FF7A00] overflow-x-hidden">
+    <div className="pt-44 sm:pt-48 md:pt-56 pb-20 md:pb-24 min-h-screen bg-white font-poppins selection:bg-orange-100 selection:text-[#FF7A00] overflow-x-hidden">
       
       {/* 1. Header Section */}
       <section className="max-w-4xl mx-auto px-5 sm:px-6 mb-16 md:mb-20 text-center">
