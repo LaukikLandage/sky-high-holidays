@@ -7,15 +7,12 @@ import { ServiceMarquee } from '../components/sections/ServiceMarquee';
 
 
 export default function ReviewsPage() {
-  const [playingId, setPlayingId] = useState<number | null>(null);
-
   const videoReviews = [
     {
       id: 1,
       title: "Guest Review",
       videoId: "cpZDj9yHIvo",
       active: true,
-      thumbnail: "https://img.youtube.com/vi/cpZDj9yHIvo/maxresdefault.jpg"
     },
     { id: 2, title: "Coming Soon", active: false },
     { id: 3, title: "Coming Soon", active: false },
@@ -79,40 +76,15 @@ export default function ReviewsPage() {
             >
               {review.active ? (
                 <div 
-                  className="block relative aspect-[9/16] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] group bg-black"
+                  className="block relative aspect-[9/16] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_60px_rgba(0,0,0,0.15)] transition-all duration-500 bg-gray-50"
                 >
-                  {playingId === review.id ? (
-                    <iframe
-                      src={`https://www.youtube.com/embed/${review.videoId}?autoplay=1&rel=0&modestbranding=1`}
-                      title={review.title}
-                      className="absolute inset-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <button 
-                      onClick={() => setPlayingId(review.id)}
-                      className="w-full h-full relative"
-                    >
-                      {/* Thumbnail Overlay */}
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500 z-10"></div>
-                      <img 
-                        src={review.thumbnail} 
-                        alt={review.title} 
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      
-                      {/* Play Button */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 z-20">
-                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-[#FF7A00] group-hover:text-white transition-all duration-500">
-                          <PlayCircle className="w-8 h-8 md:w-10 md:h-10 text-[#FF7A00] group-hover:text-white transition-colors" />
-                        </div>
-                        <span className="text-white font-black uppercase tracking-[0.2em] text-[10px] md:text-xs drop-shadow-lg">
-                          {review.title}
-                        </span>
-                      </div>
-                    </button>
-                  )}
+                  <iframe
+                    src={`https://www.youtube.com/embed/${review.videoId}?autoplay=0&rel=0&modestbranding=1&controls=1&playsinline=1`}
+                    title={review.title}
+                    className="absolute inset-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               ) : (
                 <div className="relative aspect-[9/16] bg-white rounded-[24px] md:rounded-[32px] border-2 border-dashed border-gray-100 flex flex-col items-center justify-center gap-4 group transition-all duration-500 shadow-sm">
