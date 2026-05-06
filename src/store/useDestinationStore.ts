@@ -15,6 +15,7 @@ export interface HotelStay {
   roomType: string;
   nights: number;
   meals: string;
+  image?: string;
   similarAvailable?: boolean;
 }
 
