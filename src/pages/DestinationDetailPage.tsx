@@ -458,7 +458,7 @@ export function DestinationDetailPage() {
                                       <Bed className="w-5 h-5 text-[#FF7A00]" />
                                     </div>
                                     <div>
-                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-1">Room Selection</span>
+                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-1">Room Type</span>
                                       <span className="text-sm md:text-base font-semibold text-gray-600">
                                         {stay.roomType}
                                       </span>

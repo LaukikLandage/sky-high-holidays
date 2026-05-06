@@ -140,7 +140,7 @@ export function ContactPage() {
                   <div className="flex-1 space-y-3">
                     <div className="flex items-center justify-between gap-2 min-h-[20px]">
                       <span className="text-[11px] font-bold text-gray-700 uppercase tracking-tight">Children</span>
-                      <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Below 12 Yrs</span>
+                      <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Below 11 Yrs</span>
                     </div>
                     <div className="flex items-center justify-between w-full bg-white border border-gray-100 rounded-[20px] p-2 shadow-sm hover:shadow-md hover:border-orange-100 transition-all duration-300">
                       <button 

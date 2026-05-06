@@ -190,7 +190,7 @@ export default function EnquiryPage() {
                     <div className="bg-gray-50/50 rounded-2xl p-4 border border-gray-100 flex flex-col gap-3 hover:bg-white hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-bold text-gray-700">Children</span>
-                        <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter">Below 12 Yrs</span>
+                        <span className="text-[9px] text-gray-400 font-bold uppercase tracking-tighter">Below 11 Yrs</span>
                       </div>
                       <div className="flex items-center justify-between bg-white rounded-xl p-1 shadow-sm border border-gray-100">
                         <button 
