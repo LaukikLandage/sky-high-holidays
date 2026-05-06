@@ -56,14 +56,14 @@ export function ContactPage() {
                 label="Full name*" 
                 placeholder="John Doe" 
                 value={formData.fullName}
-                onChange={(v) => setFormData({...formData, fullName: v})}
+                onChange={(v: string) => setFormData({...formData, fullName: v})}
                 required
               />
               <FormInput 
                 label="Mobile number*" 
                 placeholder="+91 98XXXXXXXX" 
                 value={formData.mobileNumber}
-                onChange={(v) => setFormData({...formData, mobileNumber: v})}
+                onChange={(v: string) => setFormData({...formData, mobileNumber: v})}
                 required
                 type="tel"
               />
@@ -71,7 +71,7 @@ export function ContactPage() {
                 label="Preferred travel dates" 
                 placeholder="e.g. 10 Oct 2025 – 17 Oct 2025" 
                 value={formData.travelDates}
-                onChange={(v) => setFormData({...formData, travelDates: v})}
+                onChange={(v: string) => setFormData({...formData, travelDates: v})}
               />
             </div>
 
@@ -81,7 +81,7 @@ export function ContactPage() {
                 label="Email address*" 
                 placeholder="you@domain.com" 
                 value={formData.email}
-                onChange={(v) => setFormData({...formData, email: v})}
+                onChange={(v: string) => setFormData({...formData, email: v})}
                 required
                 type="email"
               />
@@ -107,7 +107,7 @@ export function ContactPage() {
                 label="Budget (per person)" 
                 placeholder="e.g. $5,000 – $10,000" 
                 value={formData.budget}
-                onChange={(v) => setFormData({...formData, budget: v})}
+                onChange={(v: string) => setFormData({...formData, budget: v})}
               />
             </div>
           </div>
