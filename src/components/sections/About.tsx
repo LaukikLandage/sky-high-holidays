@@ -2,8 +2,10 @@ import { Check, Award, Shield, Heart } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
 import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export function About() {
+  const navigate = useNavigate();
   const features = [
     { icon: Award, text: 'Award-winning travel agency' },
     { icon: Shield, text: 'Trusted & secure bookings' },
@@ -45,7 +47,7 @@ export function About() {
               ))}
             </div>
 
-            <Button variant="secondary" size="lg">
+            <Button variant="secondary" size="lg" onClick={() => navigate('/about')}>
               Read More About Us
             </Button>
           </motion.div>

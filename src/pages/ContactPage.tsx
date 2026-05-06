@@ -288,7 +288,9 @@ function InfoCard({ icon: Icon, title, description, detail, href, iconBg }: any)
       </div>
       <h3 className="text-xl font-bold text-[#020617] mb-2">{title}</h3>
       <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-3">{description}</p>
-      <p className="text-gray-500 font-medium text-sm leading-relaxed max-w-[200px] break-words">{detail}</p>
+      <p className="text-[#FF7A00] md:text-gray-500 font-bold md:font-medium text-[10px] xs:text-[11px] sm:text-xs md:text-sm leading-relaxed w-full max-w-full whitespace-nowrap px-2">
+        {detail}
+      </p>
     </motion.a>
   );
 }
