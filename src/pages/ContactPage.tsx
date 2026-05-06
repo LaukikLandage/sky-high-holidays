@@ -9,7 +9,8 @@ export function ContactPage() {
     mobileNumber: '',
     country: '',
     travelDates: '',
-    budget: '',
+    adults: '',
+    children: '',
     message: ''
   });
 
@@ -103,12 +104,23 @@ export function ContactPage() {
                   <ChevronDown className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none group-focus-within:text-[#FF7A00] transition-colors" />
                 </div>
               </div>
-              <FormInput 
-                label="Budget (per person)" 
-                placeholder="e.g. $5,000 – $10,000" 
-                value={formData.budget}
-                onChange={(v: string) => setFormData({...formData, budget: v})}
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <FormInput 
+                  label="Adults*" 
+                  placeholder="e.g. 2" 
+                  value={formData.adults}
+                  onChange={(v: string) => setFormData({...formData, adults: v})}
+                  required
+                  type="number"
+                />
+                <FormInput 
+                  label="Children" 
+                  placeholder="e.g. 1" 
+                  value={formData.children}
+                  onChange={(v: string) => setFormData({...formData, children: v})}
+                  type="number"
+                />
+              </div>
             </div>
           </div>
 

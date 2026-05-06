@@ -13,7 +13,8 @@ export default function EnquiryPage() {
     phone: '',
     destination: '',
     travelDate: '',
-    travelers: '2',
+    adults: '2',
+    children: '0',
     message: ''
   });
 
@@ -154,20 +155,36 @@ export default function EnquiryPage() {
                   </div>
                 </div>
 
-                {/* Travelers */}
+                {/* Adults */}
                 <div className="space-y-2">
-                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Number of Travelers</label>
+                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Adults*</label>
                   <div className="relative group">
                     <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#FF7A00] transition-colors" />
-                    <select
-                      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#FF7A00] focus:ring-4 focus:ring-orange-50 outline-none transition-all font-medium appearance-none"
-                      value={formData.travelers}
-                      onChange={e => setFormData({ ...formData, travelers: e.target.value })}
-                    >
-                      {[1, 2, 3, 4, 5, '6+'].map(num => (
-                        <option key={num} value={num}>{num} {num === 1 ? 'Traveler' : 'Travelers'}</option>
-                      ))}
-                    </select>
+                    <input
+                      required
+                      type="number"
+                      min="1"
+                      placeholder="2"
+                      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#FF7A00] focus:ring-4 focus:ring-orange-50 outline-none transition-all font-medium"
+                      value={formData.adults}
+                      onChange={e => setFormData({ ...formData, adults: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                {/* Children */}
+                <div className="space-y-2">
+                  <label className="text-sm font-black text-[#020617] uppercase tracking-widest ml-1">Children</label>
+                  <div className="relative group">
+                    <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#FF7A00] transition-colors" />
+                    <input
+                      type="number"
+                      min="0"
+                      placeholder="0"
+                      className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-[#FF7A00] focus:ring-4 focus:ring-orange-50 outline-none transition-all font-medium"
+                      value={formData.children}
+                      onChange={e => setFormData({ ...formData, children: e.target.value })}
+                    />
                   </div>
                 </div>
               </div>
