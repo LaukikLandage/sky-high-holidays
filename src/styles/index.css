@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 html,
@@ -14,21 +14,21 @@ body {
 }
 
 @theme {
-  --font-sans: "Sora", ui-sans-serif, system-ui;
+  --font-sans: "Poppins", ui-sans-serif, system-ui;
   --font-poppins: "Poppins", sans-serif;
 }
 
 @layer base {
   body {
     @apply antialiased text-[#020617] bg-white;
-    font-family: var(--font-sans);
-    font-size: 17px;
+    font-family: var(--font-poppins);
+    font-size: 16px;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight font-extrabold text-[#020617];
-    font-family: var(--font-sans);
+    @apply tracking-tight font-bold text-[#020617];
+    font-family: var(--font-poppins);
   }
 
   /* Global Typography Scale */

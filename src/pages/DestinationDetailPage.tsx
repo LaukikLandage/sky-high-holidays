@@ -379,19 +379,19 @@ export function DestinationDetailPage() {
                     </div>
 
                     {/* Accommodation List */}
-                    <div className="divide-y divide-gray-50">
+                    <div className="divide-y divide-gray-100/60">
                       {destination.accommodationDetails.map((stay, index) => (
-                        <div key={index} className="px-8 py-5 hover:bg-gray-50/30 transition-colors group">
+                        <div key={index} className="px-8 py-5 hover:bg-gray-50/50 transition-all duration-300 group cursor-default">
                           {/* Desktop Row */}
-                          <div className="hidden md:grid grid-cols-12 gap-4 items-center">
+                          <div className="hidden md:grid grid-cols-12 gap-6 items-center">
                             <div className="col-span-6">
-                              <div className="font-bold text-[#020617] text-sm group-hover:text-[#FF7A00] transition-colors">{stay.name}</div>
+                              <div className="font-semibold text-[#020617] text-[15px] transition-colors">{stay.name}</div>
                             </div>
-                            <div className="col-span-4 text-xs font-medium text-gray-400">
+                            <div className="col-span-4 text-[13px] font-medium text-gray-400">
                               {stay.roomType}
                             </div>
                             <div className="col-span-2 text-right">
-                              <span className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-[#020617] text-white font-black text-[10px]">
+                              <span className="text-[#020617] font-bold text-sm tracking-tight">
                                 {stay.nights}N
                               </span>
                             </div>
@@ -400,12 +400,12 @@ export function DestinationDetailPage() {
                           {/* Mobile Stack */}
                           <div className="md:hidden space-y-2">
                             <div className="flex justify-between items-start gap-4">
-                              <div className="font-bold text-[#020617] text-sm">{stay.name}</div>
-                              <span className="shrink-0 inline-flex items-center justify-center px-2 py-1 rounded-md bg-gray-100 text-[#020617] font-black text-[9px]">
+                              <div className="font-semibold text-[#020617] text-sm">{stay.name}</div>
+                              <span className="shrink-0 text-[#020617] font-bold text-xs">
                                 {stay.nights}N
                               </span>
                             </div>
-                            <div className="text-[11px] font-medium text-gray-400">{stay.roomType}</div>
+                            <div className="text-[11px] font-medium text-gray-400 leading-relaxed">{stay.roomType}</div>
                           </div>
                         </div>
                       ))}
@@ -415,7 +415,7 @@ export function DestinationDetailPage() {
                   {/* Footer Note */}
                   <div className="bg-gray-50/50 px-8 py-4 border-t border-gray-100">
                     <p className="text-[10px] font-medium text-gray-400 leading-relaxed italic">
-                      Hotels are subject to availability. Similar category hotels may be provided if unavailable.
+                      Note: Hotels are subject to availability. Similar category hotels may be provided if unavailable.
                     </p>
                   </div>
                 </div>

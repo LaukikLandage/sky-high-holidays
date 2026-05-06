@@ -20,38 +20,38 @@ export function ContactPage() {
   };
 
   return (
-    <div className="pt-40 md:pt-48 pb-24 min-h-screen bg-white font-poppins selection:bg-orange-100 selection:text-[#FF7A00]">
+    <div className="pt-32 sm:pt-40 md:pt-48 pb-20 md:pb-24 min-h-screen bg-white font-poppins selection:bg-orange-100 selection:text-[#FF7A00] overflow-x-hidden">
       
       {/* 1. Header Section */}
-      <section className="max-w-4xl mx-auto px-6 mb-20 text-center">
+      <section className="max-w-4xl mx-auto px-5 sm:px-6 mb-16 md:mb-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-sm font-medium text-gray-400 uppercase tracking-[0.3em] mb-4 block">Get in Touch</span>
-          <h1 className="text-5xl md:text-7xl font-bold text-[#020617] tracking-tight leading-[1.1] mb-8">
-            Talk to our <br />
+          <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-400 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 block">Get in Touch</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#020617] tracking-tight leading-[1.2] sm:leading-[1.1] mb-6 sm:mb-8">
+            Talk to our <br className="hidden sm:block" />
             <span className="text-[#FF7A00]">travel experts</span>
           </h1>
-          <p className="text-gray-500 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-gray-500 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-medium px-2 sm:px-0">
             Planning a trip? Tell us a little about your plans and one of our travel experts will get back with a custom itinerary and pricing within 24 hours.
           </p>
         </motion.div>
       </section>
 
       {/* 2. Form Section */}
-      <section className="max-w-5xl mx-auto px-6 mb-32">
+      <section className="max-w-5xl mx-auto px-5 sm:px-6 mb-24 md:mb-32">
         <motion.form 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           onSubmit={handleSubmit}
-          className="space-y-12"
+          className="space-y-8 md:space-y-12"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-8 md:gap-y-12">
             {/* Left Column */}
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               <FormInput 
                 label="Full name*" 
                 placeholder="John Doe" 
@@ -76,7 +76,7 @@ export function ContactPage() {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               <FormInput 
                 label="Email address*" 
                 placeholder="you@domain.com" 
@@ -86,10 +86,10 @@ export function ContactPage() {
                 type="email"
               />
               <div className="flex flex-col group">
-                <label className="text-sm font-bold text-[#020617] mb-2">Country of residence</label>
+                <label className="text-[11px] md:text-sm font-bold text-[#020617] mb-1 md:mb-2">Country of residence</label>
                 <div className="relative">
                   <select 
-                    className="w-full bg-transparent border-b border-gray-200 py-4 outline-none focus:border-[#FF7A00] transition-colors appearance-none text-gray-700 font-medium cursor-pointer"
+                    className="w-full bg-transparent border-b border-gray-200 py-3 md:py-4 outline-none focus:border-[#FF7A00] transition-colors appearance-none text-gray-700 font-medium cursor-pointer text-sm md:text-base"
                     value={formData.country}
                     onChange={(e) => setFormData({...formData, country: e.target.value})}
                   >
@@ -114,25 +114,25 @@ export function ContactPage() {
 
           {/* Message Field */}
           <div className="flex flex-col">
-            <label className="text-sm font-bold text-[#020617] mb-2">Message*</label>
+            <label className="text-[11px] md:text-sm font-bold text-[#020617] mb-1 md:mb-2">Message*</label>
             <textarea 
               required
               rows={1}
               placeholder="Tell us your destination, must-see places, special requests..."
-              className="w-full bg-transparent border-b border-gray-200 py-4 outline-none focus:border-[#FF7A00] transition-colors text-gray-700 font-medium resize-none overflow-hidden min-h-[60px]"
+              className="w-full bg-transparent border-b border-gray-200 py-3 md:py-4 outline-none focus:border-[#FF7A00] transition-colors text-gray-700 font-medium resize-none overflow-hidden min-h-[60px] text-sm md:text-base"
               value={formData.message}
               onChange={(e) => setFormData({...formData, message: e.target.value})}
             />
           </div>
 
           {/* Privacy & Submit */}
-          <div className="space-y-8 pt-4">
-            <p className="text-xs text-gray-400 font-medium leading-relaxed max-w-2xl">
+          <div className="space-y-6 md:space-y-8 pt-4">
+            <p className="text-[10px] md:text-xs text-gray-400 font-medium leading-relaxed max-w-2xl">
               We respect your privacy. Your details are used only to plan your trip and will not be shared. By submitting, you agree to receive emails/calls about your booking.
             </p>
             <button 
               type="submit"
-              className="px-10 py-4 bg-[#FF7A00] text-white rounded-full font-bold text-sm hover:bg-[#e66e00] transition-all hover:shadow-xl hover:shadow-orange-100 active:scale-[0.98]"
+              className="w-full sm:w-auto px-10 py-3.5 md:py-4 bg-[#FF7A00] text-white rounded-full font-bold text-xs md:text-sm hover:bg-[#e66e00] transition-all hover:shadow-xl hover:shadow-orange-100 active:scale-[0.98]"
             >
               Request a Quote
             </button>
@@ -141,9 +141,9 @@ export function ContactPage() {
       </section>
 
       {/* 3. Contact Info Section */}
-      <section className="bg-gray-50/50 py-24 border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+      <section className="bg-gray-50/50 py-16 md:py-24 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-5 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-16">
             <InfoCard 
               icon={Phone}
               title="Call"
@@ -173,16 +173,16 @@ export function ContactPage() {
       </section>
 
       {/* 4. Map Section */}
-      <section className="max-w-5xl mx-auto px-6 pb-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#020617] uppercase tracking-wider">Our Office Location</h2>
-          <div className="w-12 h-1 bg-[#FF7A00] mx-auto mt-4 rounded-full"></div>
+      <section className="max-w-5xl mx-auto px-5 sm:px-6 pb-20 md:pb-24">
+        <div className="text-center mb-10 md:mb-12 pt-16 md:pt-24">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#020617] uppercase tracking-wider">Our Office Location</h2>
+          <div className="w-10 md:w-12 h-1 bg-[#FF7A00] mx-auto mt-3 md:mt-4 rounded-full"></div>
         </div>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="w-full h-[450px] bg-gray-100 rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-100 grayscale hover:grayscale-0 transition-all duration-700"
+          className="w-full h-[300px] sm:h-[400px] md:h-[450px] bg-gray-100 rounded-[24px] md:rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-100 grayscale hover:grayscale-0 transition-all duration-700"
         >
           <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.381395996614!2d73.8966563!3d18.5113947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c1df5c3f912d%3A0x600f7e4e1f7a6f2!2sFatima%20Nagar%2C%20Wanowrie%2C%20Pune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1714571234567!5m2!1sen!2sin" 
@@ -204,14 +204,14 @@ export function ContactPage() {
 function FormInput({ label, placeholder, value, onChange, type = "text", required = false }: any) {
   return (
     <div className="flex flex-col group">
-      <label className="text-sm font-bold text-[#020617] mb-2">{label}</label>
+      <label className="text-[11px] md:text-sm font-bold text-[#020617] mb-1 md:mb-2">{label}</label>
       <input 
         required={required}
         type={type}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="bg-transparent border-b border-gray-200 py-4 outline-none focus:border-[#FF7A00] transition-colors text-gray-700 font-medium placeholder:text-gray-300"
+        className="bg-transparent border-b border-gray-200 py-3 md:py-4 outline-none focus:border-[#FF7A00] transition-colors text-gray-700 font-medium placeholder:text-gray-300 text-sm md:text-base"
       />
     </div>
   );

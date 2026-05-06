@@ -89,7 +89,6 @@ export function Footer() {
 
         {/* Payment Methods Section */}
         <div className="border-t border-white/5 pt-12 mb-10 text-center">
-          <h4 className="text-gray-400 text-xs font-bold uppercase tracking-[0.25em] mb-8">Payment Methods</h4>
           <div className="flex justify-center mb-10">
             <img 
               src="/payment_methods_strip.png" 
@@ -111,8 +110,8 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="flex flex-col items-center gap-3"
               >
-                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-gray-500">
-                  Powered by <span className="text-gray-400">LenodelLabs.com</span>
+                <span className="text-[10px] md:text-xs font-semibold tracking-[0.05em] text-gray-500">
+                  Powered By <span className="text-gray-400">LenodelLabs.com</span>
                 </span>
                 <img 
                   src="/lenodellabs-logo.png" 
@@ -123,14 +122,14 @@ export function Footer() {
             </div>
 
             {/* Right: Designed By */}
-            <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] text-gray-500 text-center md:text-right">
+            <div className="text-[10px] md:text-xs font-semibold tracking-[0.05em] text-gray-500 text-center md:text-right">
               <a 
                 href="https://laukiklandage.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="hover:text-[#FF7A00] transition-colors"
               >
-                Designed by LaukikLandage.com
+                Designed By LaukikLandage.com
               </a>
             </div>
           </div>
