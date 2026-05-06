@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Send, MapPin, Calendar, MessageSquare, Phone, User, Mail } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { SectionHeader } from '../components/ui/SectionHeader';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
 
 export default function EnquiryPage() {
   const [searchParams] = useSearchParams();
@@ -36,6 +38,11 @@ export default function EnquiryPage() {
 
   return (
     <div className="relative pt-52 md:pt-60 pb-24 bg-[#F9FAFB] min-h-screen overflow-hidden">
+      <SEO 
+        title={`Enquire Now | Sky High Holidays`} 
+        description={`Book your dream vacation with Sky High Holidays. Fill out our enquiry form for customized tour packages, international trips, and honeymoon packages.`}
+      />
+      <HiddenSEOKeywords type="contact" />
       {/* Background World Map Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-0 flex items-center justify-center overflow-hidden">
         <img 
@@ -161,9 +168,9 @@ export default function EnquiryPage() {
                   <div className="grid grid-cols-2 gap-4">
                     {/* Adults Counter */}
                     <div className="bg-gray-50/50 rounded-2xl p-4 md:p-5 border border-gray-100 flex flex-col gap-3 hover:bg-white hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300">
-                      <div className="flex items-center justify-between gap-1">
-                        <span className="text-xs sm:text-sm font-bold text-gray-700">Adults</span>
-                        <span className="text-[8px] sm:text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Above 12 Yrs</span>
+                      <div>
+                        <span className="text-sm font-bold text-gray-700 block">Adults</span>
+                        <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">Above 12 Yrs</span>
                       </div>
                       <div className="flex items-center justify-between bg-white rounded-xl p-1.5 shadow-sm border border-gray-100">
                         <button 
@@ -188,9 +195,9 @@ export default function EnquiryPage() {
 
                     {/* Children Counter */}
                     <div className="bg-gray-50/50 rounded-2xl p-4 md:p-5 border border-gray-100 flex flex-col gap-3 hover:bg-white hover:shadow-xl hover:shadow-orange-100/20 transition-all duration-300">
-                      <div className="flex items-center justify-between gap-1">
-                        <span className="text-xs sm:text-sm font-bold text-gray-700">Children</span>
-                        <span className="text-[8px] sm:text-[9px] text-gray-400 font-bold uppercase tracking-tighter whitespace-nowrap">Below 11 Yrs</span>
+                      <div>
+                        <span className="text-sm font-bold text-gray-700 block">Children</span>
+                        <span className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">Below 11 Yrs</span>
                       </div>
                       <div className="flex items-center justify-between bg-white rounded-xl p-1.5 shadow-sm border border-gray-100">
                         <button 
@@ -238,7 +245,7 @@ export default function EnquiryPage() {
                   size="lg"
                   className="w-full h-16 rounded-full text-lg font-black uppercase tracking-widest shadow-2xl hover:shadow-orange-200 transition-all hover:scale-[1.02] active:scale-[0.98]"
                 >
-                  Book Now
+                  Submit
                   <Send className="w-5 h-5 ml-3" />
                 </Button>
               </div>

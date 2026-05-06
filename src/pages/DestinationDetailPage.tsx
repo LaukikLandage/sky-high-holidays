@@ -11,6 +11,8 @@ import { FaFacebookF, FaInstagram, FaWhatsapp, FaLink } from 'react-icons/fa';
 import { Button } from '../components/ui/Button';
 import { useDestinationStore } from '@/store/useDestinationStore';
 import { ServiceMarquee } from '../components/sections/ServiceMarquee';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
 
 // Reusable Accordion Component for Itinerary
 function AccordionItem({ day, title, content, isOpen, onClick }: { day: number, title: string, content: string, isOpen: boolean, onClick: () => void }) {
@@ -127,6 +129,23 @@ export function DestinationDetailPage() {
 
   return (
     <>
+      <SEO 
+        title={`${destination.name} Tour Packages | Sky High Holidays`}
+        description={`Book the best ${destination.name} tour packages with Sky High Holidays. Explore ${destination.name} with luxury stays, custom itineraries, and expert travel planning from India.`}
+        schemaData={{
+          '@context': 'https://schema.org',
+          '@type': 'TouristTrip',
+          name: `${destination.name} Tour Package`,
+          description: `Explore ${destination.name} with Sky High Holidays premium tour packages.`,
+          touristType: 'Leisure',
+          provider: {
+            '@type': 'TravelAgency',
+            name: 'Sky High Holidays',
+            url: 'https://skyhighholidays.vercel.app'
+          }
+        }}
+      />
+      <HiddenSEOKeywords type="destination" destination={destination.name} />
       <div className="min-h-screen bg-[#F9FAFB] pt-48 font-poppins text-[#020617]">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8">
         {/* Breadcrumbs */}

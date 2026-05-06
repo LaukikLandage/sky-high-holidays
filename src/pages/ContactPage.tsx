@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
 
 export function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,7 +24,12 @@ export function ContactPage() {
 
   return (
     <div className="pt-44 sm:pt-48 md:pt-56 pb-20 md:pb-24 min-h-screen bg-white font-poppins selection:bg-orange-100 selection:text-[#FF7A00] overflow-x-hidden">
-      
+      <SEO 
+        title="Contact Us | Sky High Holidays Pune" 
+        description="Contact Sky High Holidays in Pune for the best international and domestic tour packages, luxury travel planning, and customized holiday itineraries."
+      />
+      <HiddenSEOKeywords type="contact" />
+
       {/* 1. Header Section */}
       <section className="max-w-4xl mx-auto px-5 sm:px-6 mb-16 md:mb-20 text-center">
         <motion.div

@@ -4,6 +4,8 @@ import { Button } from '../components/ui/Button';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { Link } from 'react-router-dom';
 import { Counter } from '../components/ui/Counter';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
 
 const stats = [
   { label: 'Happy Travelers', value: '1000+', icon: Users },
@@ -28,6 +30,11 @@ export default function AboutPage() {
 
   return (
     <div className="pt-36 pb-20">
+      <SEO 
+        title="About Us | Sky High Holidays - Premium Travel Agency Pune" 
+        description="Learn about Sky High Holidays, a premium travel agency in Pune, India. Founded by Ashwin Nair, we craft extraordinary travel experiences with personalized itineraries and luxury stays."
+      />
+      <HiddenSEOKeywords type="general" />
       {/* ... Hero Section ... */}
       <section className="relative pt-10 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[#F9FAFB] -z-10" />
