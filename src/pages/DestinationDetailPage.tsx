@@ -372,20 +372,22 @@ export function DestinationDetailPage() {
                     <button 
                       onClick={() => {
                         const container = document.getElementById('accommodation-carousel');
-                        if (container) container.scrollBy({ left: -420, behavior: 'smooth' });
+                        if (container) container.scrollBy({ left: -container.offsetWidth + 32, behavior: 'smooth' });
                       }}
-                      className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] transition-all duration-300"
+                      className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-6 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-md border border-gray-100 shadow-lg text-gray-400 hover:text-[#FF7A00] transition-all duration-300 active:scale-95"
+                      aria-label="Previous Stay"
                     >
-                      <ChevronLeft className="w-6 h-6" />
+                      <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
                     <button 
                       onClick={() => {
                         const container = document.getElementById('accommodation-carousel');
-                        if (container) container.scrollBy({ left: 420, behavior: 'smooth' });
+                        if (container) container.scrollBy({ left: container.offsetWidth - 32, behavior: 'smooth' });
                       }}
-                      className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-30 w-12 h-12 items-center justify-center rounded-full bg-white border border-gray-100 shadow-xl text-gray-400 hover:text-[#FF7A00] transition-all duration-300"
+                      className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-6 z-30 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-md border border-gray-100 shadow-lg text-gray-400 hover:text-[#FF7A00] transition-all duration-300 active:scale-95"
+                      aria-label="Next Stay"
                     >
-                      <ChevronRight className="w-6 h-6" />
+                      <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
 
                     {/* Carousel Container */}
