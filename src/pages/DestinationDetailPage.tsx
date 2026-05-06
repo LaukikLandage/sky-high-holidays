@@ -476,6 +476,19 @@ export function DestinationDetailPage() {
                                       </span>
                                     </div>
                                   </div>
+
+                                  {/* Google Maps Link */}
+                                  {stay.googleMapsUrl && (
+                                    <a 
+                                      href={stay.googleMapsUrl}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="flex items-center gap-2 mt-4 px-4 py-2.5 rounded-xl border border-gray-100 bg-gray-50/50 text-gray-500 hover:text-[#FF7A00] hover:bg-white hover:border-orange-100 hover:shadow-sm transition-all duration-300 group/map"
+                                    >
+                                      <MapPin className="w-4 h-4 text-gray-400 group-hover/map:text-[#FF7A00] transition-colors" />
+                                      <span className="text-[11px] font-bold uppercase tracking-wider">View on Google Maps</span>
+                                    </a>
+                                  )}
                                 </div>
                               </div>
 

@@ -38,6 +38,7 @@ export const DESTINATIONS = [
         nights: 4,
         meals: 'Daily Breakfast',
         image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&q=80&w=800',
+        googleMapsUrl: 'https://maps.app.goo.gl/AdmiralPlaza',
         similarAvailable: true
       }
     ],
@@ -88,6 +89,7 @@ export const DESTINATIONS = [
         nights: 2,
         meals: 'Daily Breakfast',
         image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800',
+        googleMapsUrl: 'https://maps.app.goo.gl/AlankaraVilla',
         similarAvailable: true
       },
       {
@@ -98,6 +100,7 @@ export const DESTINATIONS = [
         nights: 2,
         meals: 'Daily Breakfast',
         image: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&q=80&w=800',
+        googleMapsUrl: 'https://maps.app.goo.gl/BlissSurfer',
         similarAvailable: true
       }
     ],

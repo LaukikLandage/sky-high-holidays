@@ -16,6 +16,7 @@ export interface HotelStay {
   nights: number;
   meals: string;
   image?: string;
+  googleMapsUrl?: string;
   similarAvailable?: boolean;
 }
 
