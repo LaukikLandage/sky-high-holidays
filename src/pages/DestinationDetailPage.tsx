@@ -432,22 +432,18 @@ export function DestinationDetailPage() {
                               </div>
                             </div>
 
-                            {/* Premium Dark Content Panel */}
-                            <div className="p-8 md:p-10 flex flex-col justify-between flex-grow bg-[#0f172a] relative">
-                              {/* Subtle Gradient Overlay for Depth */}
-                              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none"></div>
-                              
-                              <div className="relative z-10 space-y-8">
+                            {/* Premium Content Panel */}
+                            <div className="p-8 md:p-10 flex flex-col justify-between flex-grow bg-white">
+                              <div className="space-y-8">
                                 {/* Hotel Name & Location Info */}
                                 <div>
-                                  <span className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FF7A00] mb-3 block">Premier Stay</span>
-                                  <h4 className="text-xl md:text-2xl font-bold text-white leading-tight mb-2 tracking-tight">
+                                  <h4 className="text-xl md:text-2xl font-bold text-[#020617] leading-tight mb-2 tracking-tight">
                                     {stay.name}
                                   </h4>
                                   {(stay.city || stay.country) && (
-                                    <div className="flex items-center gap-1.5 text-slate-400">
-                                      <MapPin className="w-3.5 h-3.5 opacity-70" />
-                                      <span className="text-[11px] font-medium uppercase tracking-wider">
+                                    <div className="flex items-center gap-1.5 text-gray-400">
+                                      <MapPin className="w-3.5 h-3.5" />
+                                      <span className="text-[11px] font-semibold uppercase tracking-wider">
                                         {[stay.city, stay.country].filter(Boolean).join(', ')}
                                       </span>
                                     </div>
@@ -456,24 +452,24 @@ export function DestinationDetailPage() {
 
                                 <div className="space-y-6">
                                   <div className="flex items-center gap-4 group/item">
-                                    <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.05] group-hover/item:bg-orange-500/10 transition-colors duration-300">
+                                    <div className="p-3 rounded-2xl bg-orange-50/50 border border-orange-100 group-hover/item:bg-orange-100 transition-colors duration-300">
                                       <Bed className="w-5 h-5 text-[#FF7A00]" />
                                     </div>
                                     <div>
-                                      <span className="text-[10px] font-black text-slate-500 block uppercase tracking-widest mb-1">Room Selection</span>
-                                      <span className="text-sm md:text-base font-medium text-slate-200">
+                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-1">Room Selection</span>
+                                      <span className="text-sm md:text-base font-semibold text-gray-600">
                                         {stay.roomType}
                                       </span>
                                     </div>
                                   </div>
 
                                   <div className="flex items-center gap-4 group/item">
-                                    <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/[0.05] group-hover/item:bg-orange-500/10 transition-colors duration-300">
+                                    <div className="p-3 rounded-2xl bg-orange-50/50 border border-orange-100 group-hover/item:bg-orange-100 transition-colors duration-300">
                                       <Utensils className="w-5 h-5 text-[#FF7A00]" />
                                     </div>
                                     <div>
-                                      <span className="text-[10px] font-black text-slate-500 block uppercase tracking-widest mb-1">Meal Plan</span>
-                                      <span className="text-sm md:text-base font-medium text-slate-200">
+                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-1">Meal Plan</span>
+                                      <span className="text-sm md:text-base font-semibold text-gray-600">
                                         {stay.meals || 'Daily Breakfast Included'}
                                       </span>
                                     </div>
@@ -481,8 +477,8 @@ export function DestinationDetailPage() {
                                 </div>
                               </div>
 
-                              <div className="mt-10 pt-6 border-t border-white/[0.05] relative z-10">
-                                <p className="text-[10px] font-medium text-slate-500 italic leading-relaxed">
+                              <div className="mt-10 pt-6 border-t border-gray-50">
+                                <p className="text-[10px] font-medium text-gray-400 italic leading-relaxed">
                                   Note: Hotels are subject to availability. Similar category hotels may be provided if unavailable.
                                 </p>
                               </div>
