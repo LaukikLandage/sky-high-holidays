@@ -418,7 +418,7 @@ export function DestinationDetailPage() {
                             whileHover={{ y: -8 }}
                             className="bg-white rounded-[32px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 h-full flex flex-col transition-all duration-500 hover:shadow-orange-200/20 group/card"
                           >
-                            {/* Hotel Image with Gradient Overlay */}
+                            {/* Hotel Image with Nights Badge */}
                             <div className="relative h-48 md:h-56 overflow-hidden">
                               <img 
                                 src={stay.image || `https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800`} 
@@ -426,44 +426,53 @@ export function DestinationDetailPage() {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
                                 loading="lazy"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
-                              <div className="absolute bottom-4 left-6 right-6 flex justify-between items-end">
-                                <div className="text-white">
-                                  <span className="text-[10px] font-black uppercase tracking-widest opacity-80 mb-1 block">Stay Details</span>
-                                  <h4 className="text-xl md:text-2xl font-bold leading-tight drop-shadow-md">
-                                    {stay.name}
-                                  </h4>
-                                </div>
-                                <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 text-center shadow-lg">
-                                  <span className="text-xl font-bold text-[#FF7A00] block leading-none">{stay.nights}</span>
-                                  <span className="text-[8px] font-black text-gray-500 uppercase tracking-widest mt-1 block">Nights</span>
-                                </div>
+                              <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-2xl px-4 py-2 text-center shadow-lg border border-white/20">
+                                <span className="text-xl font-bold text-[#FF7A00] block leading-none">{stay.nights}</span>
+                                <span className="text-[8px] font-black text-gray-500 uppercase tracking-widest mt-1 block">Nights</span>
                               </div>
                             </div>
 
                             <div className="p-8 md:p-10 flex flex-col justify-between flex-grow">
                               <div className="space-y-6">
-                                <div className="flex items-center gap-3">
-                                  <div className="p-2.5 rounded-xl bg-orange-50/50">
-                                    <Bed className="w-5 h-5 text-[#FF7A00]" />
-                                  </div>
-                                  <div>
-                                    <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Room Selection</span>
-                                    <span className="text-sm md:text-base font-semibold text-gray-600">
-                                      {stay.roomType}
-                                    </span>
-                                  </div>
+                                {/* Hotel Name & Location Info */}
+                                <div>
+                                  <span className="text-[10px] font-black uppercase tracking-widest text-[#FF7A00] mb-2 block">Stay Information</span>
+                                  <h4 className="text-xl md:text-2xl font-bold text-[#020617] leading-tight mb-2">
+                                    {stay.name}
+                                  </h4>
+                                  {(stay.city || stay.country) && (
+                                    <div className="flex items-center gap-1.5 text-gray-400">
+                                      <MapPin className="w-3 h-3" />
+                                      <span className="text-[11px] font-semibold uppercase tracking-wider">
+                                        {[stay.city, stay.country].filter(Boolean).join(', ')}
+                                      </span>
+                                    </div>
+                                  )}
                                 </div>
 
-                                <div className="flex items-center gap-3">
-                                  <div className="p-2.5 rounded-xl bg-orange-50/50">
-                                    <Utensils className="w-5 h-5 text-[#FF7A00]" />
+                                <div className="pt-2 space-y-5">
+                                  <div className="flex items-center gap-3">
+                                    <div className="p-2.5 rounded-xl bg-orange-50/50">
+                                      <Bed className="w-5 h-5 text-[#FF7A00]" />
+                                    </div>
+                                    <div>
+                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Room Selection</span>
+                                      <span className="text-sm md:text-base font-semibold text-gray-600">
+                                        {stay.roomType}
+                                      </span>
+                                    </div>
                                   </div>
-                                  <div>
-                                    <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Meal Plan</span>
-                                    <span className="text-sm md:text-base font-semibold text-gray-600">
-                                      {stay.meals || 'Daily Breakfast Included'}
-                                    </span>
+
+                                  <div className="flex items-center gap-3">
+                                    <div className="p-2.5 rounded-xl bg-orange-50/50">
+                                      <Utensils className="w-5 h-5 text-[#FF7A00]" />
+                                    </div>
+                                    <div>
+                                      <span className="text-[10px] font-black text-gray-400 block uppercase tracking-widest mb-0.5">Meal Plan</span>
+                                      <span className="text-sm md:text-base font-semibold text-gray-600">
+                                        {stay.meals || 'Daily Breakfast Included'}
+                                      </span>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
