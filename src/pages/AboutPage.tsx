@@ -7,6 +7,7 @@ import { Counter } from '../components/ui/Counter';
 import { SEO } from '../components/seo/SEO';
 import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
 import { PAGE_SEO } from '../lib/seoKeywords';
+import { TrustSection } from '../components/sections/TrustSection';
 
 const stats = [
   { label: 'Happy Travelers', value: '1000+', icon: Users },
@@ -168,6 +169,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <TrustSection />
 
       {/* Vision & Mission */}
       <section className="py-24 bg-white">
