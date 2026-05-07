@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import { SectionHeader } from '../ui/SectionHeader';
 
 export function TrustSection() {
   const trustItems = [
@@ -29,12 +30,10 @@ export function TrustSection() {
   return (
     <section className="py-12 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#020617] tracking-tight">
-            Trusted Travel & <span className="text-[#FF7A00]">Tourism Partner</span>
-          </h2>
-          <p className="text-gray-500 mt-2 font-medium">Recognized for excellence across major platforms</p>
-        </div>
+        <SectionHeader 
+          subtitle="TRUST & RECOGNITION"
+          title="Trusted Travel & Tourism Partner"
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {trustItems.map((item, i) => (
