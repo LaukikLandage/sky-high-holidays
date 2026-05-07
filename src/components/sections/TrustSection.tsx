@@ -54,20 +54,11 @@ export function TrustSection() {
                 />
               </div>
               
-              <div className="flex gap-1 mb-3">
+              <div className="flex gap-1 mb-0">
                 {[...Array(item.stars)].map((_, j) => (
                   <Star key={j} className="w-5 h-5 fill-[#FF7A00] text-[#FF7A00]" />
                 ))}
               </div>
-              
-              <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-black text-[#020617]">{item.rating}</span>
-                <span className="text-gray-400 font-bold">/ 5</span>
-              </div>
-              
-              <p className="text-gray-500 text-sm font-semibold mt-1 uppercase tracking-widest">
-                {item.count} Verified Reviews
-              </p>
             </motion.div>
           ))}
         </div>
