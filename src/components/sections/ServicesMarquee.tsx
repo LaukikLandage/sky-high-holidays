@@ -26,7 +26,7 @@ export function ServicesMarquee() {
   );
 
   return (
-    <div className="relative w-full bg-[#020617] py-8 md:py-10 overflow-hidden border-y border-white/5">
+    <div className="relative w-full bg-[#020617] py-4 md:py-6 overflow-hidden border-y border-white/5">
       <motion.div
         className="flex"
         animate={{

@@ -17,7 +17,7 @@ export function StatsSection() {
   ];
 
   return (
-    <section ref={ref} className="py-6 md:py-8 lg:py-10 bg-[#020617] border-y border-white/5 relative overflow-hidden">
+    <section ref={ref} className="py-3 md:py-4 lg:py-5 bg-[#020617] border-y border-white/5 relative overflow-hidden">
       {/* Animated World Map Background */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden opacity-[0.12] mix-blend-screen">
         <img 

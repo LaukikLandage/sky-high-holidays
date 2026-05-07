@@ -10,6 +10,7 @@ import { BrandIntro } from '../components/sections/BrandIntro';
 import { ServicesMarquee } from '../components/sections/ServicesMarquee';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
+import { TrustSection } from '../components/sections/TrustSection';
 import { ScrollToTop } from '../components/ui/ScrollToTop';
 import { SEO } from '../components/seo/SEO';
 import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
@@ -69,6 +70,7 @@ export function HomePage() {
         <DomesticCarousel />
       </div>
       <About />
+      <TrustSection />
       <Services />
       <WhyChooseUs />
       <Testimonials />

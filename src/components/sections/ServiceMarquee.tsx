@@ -32,7 +32,7 @@ export function ServiceMarquee({ backgroundColor = '#FDF5E6' }: ServiceMarqueePr
 
   return (
     <div 
-      className="relative w-full py-6 md:py-8 overflow-hidden border-y"
+      className="relative w-full py-3 md:py-4 overflow-hidden border-y"
       style={{ 
         backgroundColor,
         borderColor: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'
