@@ -31,10 +31,10 @@ export function TrustSection() {
     <section className="py-12 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#020617] uppercase mb-6">
-            TRUST & RECOGNITION
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#020617] mb-6">
+            Trust & Recognition
           </h2>
-          <div className="w-24 h-[6px] bg-[#FF7A00] rounded-full" />
+          <div className="w-24 h-1.5 bg-[#FF7A00] rounded-full" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
