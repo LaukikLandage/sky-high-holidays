@@ -131,20 +131,56 @@ export const DESTINATIONS = [
     name: 'Thailand',
     slug: 'thailand',
     location: 'Southeast Asia',
-    price: '₹69,999',
+    price: '₹23,000',
     rating: 4.7,
-    image: 'https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&q=80&w=1200',
-    duration: '6 Days',
+    image: '/images/1_Destinations/International/Thailand/cover/thailand-cover.jpeg',
+    duration: '5 Days / 4 Nights',
     type: 'international',
+    accommodationDetails: [
+      {
+        city: 'Pattaya',
+        country: 'Thailand',
+        name: 'Welcome Plaza Hotel',
+        roomType: 'Superior Room',
+        nights: 2,
+        meals: 'Daily Breakfast',
+        image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=800',
+        googleMapsUrl: 'https://maps.app.goo.gl/WelcomePlazaPattaya',
+        similarAvailable: true
+      },
+      {
+        city: 'Bangkok',
+        country: 'Thailand',
+        name: 'The Ecotel Hotel',
+        roomType: 'Superior Room',
+        nights: 2,
+        meals: 'Daily Breakfast',
+        image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&q=80&w=800',
+        googleMapsUrl: 'https://maps.app.goo.gl/EcotelBangkok',
+        similarAvailable: true
+      }
+    ],
+    itinerary: [
+      { day: 1, title: 'Arrival & Leisure', content: 'Arrive at your destination and enjoy a relaxed day at leisure—unwind, explore nearby surroundings, or indulge in hotel amenities at your own pace.' },
+      { day: 2, title: 'Coral Island Tour & Alcazar Show', content: 'Experience crystal-clear beaches, thrilling water activities & the world-famous Alcazar Cabaret Show — the perfect blend of adventure and nightlife in Pattaya! 🎭🏝️' },
+      { day: 3, title: 'Inter Hotel Transfer & Safari World', content: 'Enjoy hassle-free hotel transfers and an exciting day at Safari World with thrilling wildlife encounters, marine shows & unforgettable family fun! 🌍✨' },
+      { day: 4, title: 'Bangkok City Tour', content: 'Discover the beauty of Bangkok with iconic temple visits, rich cultural heritage & the magnificent Golden Buddha and Reclining Buddha experience! 🙏' },
+      { day: 5, title: 'Departure Transfers to Airport', content: 'Smooth hotel-to-airport transfer, hassle-free departure, comfortable ride, timely pickup, stress-free end to your journey ✨' }
+    ],
     inclusions: [
-      { text: "Bangkok & Pattaya Hotels", icon: "Hotel" },
-      { text: "Coral Island Tour", icon: "Ticket" },
-      { text: "Safari World & Marine Park", icon: "Ticket" },
-      { text: "Daily Breakfast", icon: "Utensils" }
+      { text: "Visa on Arrival", icon: "BadgeCheck" },
+      { text: "02 Nights Stay in Pattaya", icon: "Hotel" },
+      { text: "02 Nights Stay in Bangkok", icon: "Hotel" },
+      { text: "Daily Breakfast at Hotel", icon: "Utensils" },
+      { text: "All Transports Included", icon: "CarTaxiFront" },
+      { text: "All Entry Tickets Included", icon: "Ticket" }
     ],
     exclusions: [
-      { text: "Thailand Visa", icon: "BadgeCheck" },
-      { text: "Flight Tickets", icon: "Plane" }
+      { text: "Personal Expenses", icon: "Wallet" },
+      { text: "Flight Tickets", icon: "Plane" },
+      { text: "Travel Insurance", icon: "ShieldX" },
+      { text: "Lunch & Dinner", icon: "Utensils" },
+      { text: "Optional Activities", icon: "Ticket" }
     ]
   },
   {
