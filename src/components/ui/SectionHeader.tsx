@@ -27,7 +27,7 @@ export function SectionHeader({ title, subtitle, description, className, dark = 
       </h2>
       {description && (
         <p className={cn(
-          "mt-6 text-lg max-w-3xl mx-auto font-medium leading-relaxed",
+          "mt-3 text-lg max-w-3xl mx-auto font-medium leading-relaxed",
           dark ? "text-gray-400" : "text-gray-500"
         )}>
           {description}
