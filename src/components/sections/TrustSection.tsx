@@ -64,12 +64,6 @@ export function TrustSection() {
               className={`group bg-white p-8 rounded-[2.5rem] border border-gray-100 flex flex-col items-center text-center transition-all duration-500 hover:border-opacity-50 shadow-sm ${item.hoverGlow} hover:shadow-2xl relative overflow-hidden h-full`}
               style={{ '--hover-border': item.accent } as any}
             >
-              {/* Verified Badge */}
-              <div className="absolute top-6 right-6 flex items-center gap-1.5 py-1 px-3 bg-gray-50 rounded-full border border-gray-100 group-hover:bg-white transition-colors">
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-500" />
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Verified</span>
-              </div>
-
               {/* Logo Container */}
               <div className="h-16 flex items-center justify-center mb-8 w-full px-4">
                 <img 
