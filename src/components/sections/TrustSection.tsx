@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Star, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Star, ExternalLink } from 'lucide-react';
 import { SectionHeader } from '../ui/SectionHeader';
 
 export function TrustSection() {
