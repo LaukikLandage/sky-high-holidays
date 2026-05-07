@@ -19,6 +19,14 @@ export default function ReviewsPage() {
     { id: 2, title: "Guest Review", videoId: "B5CGE6Nspnw", active: true },
     { id: 3, title: "Coming Soon", active: false },
     { id: 4, title: "Coming Soon", active: false },
+    { id: 5, title: "Coming Soon", active: false },
+    { id: 6, title: "Coming Soon", active: false },
+    { id: 7, title: "Coming Soon", active: false },
+    { id: 8, title: "Coming Soon", active: false },
+    { id: 9, title: "Coming Soon", active: false },
+    { id: 10, title: "Coming Soon", active: false },
+    { id: 11, title: "Coming Soon", active: false },
+    { id: 12, title: "Coming Soon", active: false },
   ];
 
   return (
