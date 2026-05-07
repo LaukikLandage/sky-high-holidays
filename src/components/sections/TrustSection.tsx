@@ -11,8 +11,8 @@ export function TrustSection() {
       logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_logo_2015.svg',
       stars: 5,
       url: 'https://www.google.com/search?q=Sky+High+Holidays+Pune+Reviews',
-      accent: '#4285F4', // Google Blue
-      hoverGlow: 'hover:shadow-blue-100'
+      accent: '#020617',
+      hoverGlow: 'hover:shadow-black/5'
     },
     {
       name: 'Justdial',
@@ -21,8 +21,8 @@ export function TrustSection() {
       logo: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Justdial_logo.png',
       stars: 5,
       url: 'https://www.justdial.com/Pune/Sky-High-Holidays-Wanowrie/020PXX20.XX20.180214151445.U3C9',
-      accent: '#FFAB00', // Justdial Yellow
-      hoverGlow: 'hover:shadow-yellow-100'
+      accent: '#020617',
+      hoverGlow: 'hover:shadow-black/5'
     },
     {
       name: 'Trustpilot',
@@ -31,8 +31,8 @@ export function TrustSection() {
       logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Trustpilot_logo.svg',
       stars: 5,
       url: 'https://www.trustpilot.com/search?query=Sky+High+Holidays',
-      accent: '#00B67A', // Trustpilot Green
-      hoverGlow: 'hover:shadow-green-100'
+      accent: '#020617',
+      hoverGlow: 'hover:shadow-black/5'
     }
   ];
 
