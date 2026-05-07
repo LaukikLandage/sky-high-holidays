@@ -33,6 +33,7 @@ export function TrustSection() {
         <SectionHeader 
           subtitle="TRUST & RECOGNITION"
           title="Trusted Travel & Tourism Partner"
+          description="Discover trusted domestic and international tour packages with verified customer reviews, top-rated travel services, and memorable holiday experiences across India and worldwide."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

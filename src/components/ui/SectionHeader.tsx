@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils"
 interface SectionHeaderProps {
   title: string;
   subtitle?: string;
+  description?: string;
   className?: string;
   dark?: boolean;
 }
 
-export function SectionHeader({ title, subtitle, className, dark = false }: SectionHeaderProps) {
+export function SectionHeader({ title, subtitle, description, className, dark = false }: SectionHeaderProps) {
   return (
     <div className={cn("text-center mb-16 flex flex-col items-center", className)}>
       {subtitle && (
@@ -24,6 +25,14 @@ export function SectionHeader({ title, subtitle, className, dark = false }: Sect
       )}>
         {title}
       </h2>
+      {description && (
+        <p className={cn(
+          "mt-6 text-lg max-w-3xl mx-auto font-medium leading-relaxed",
+          dark ? "text-gray-400" : "text-gray-500"
+        )}>
+          {description}
+        </p>
+      )}
     </div>
   )
 }
