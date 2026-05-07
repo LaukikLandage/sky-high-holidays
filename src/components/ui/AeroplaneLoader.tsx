@@ -8,7 +8,7 @@ export function AeroplaneLoader() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -18,7 +18,7 @@ export function AeroplaneLoader() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
           className="fixed inset-0 z-[9999] bg-[#020617] flex flex-col items-center justify-center overflow-hidden"
         >
           {/* Animated Background Clouds/Trails */}
@@ -29,10 +29,10 @@ export function AeroplaneLoader() {
                 initial={{ x: -100, y: Math.random() * 100 + "%" }}
                 animate={{ x: "110vw" }}
                 transition={{
-                  duration: 3 + Math.random() * 4,
+                  duration: 1.5 + Math.random() * 2,
                   repeat: Infinity,
                   ease: "linear",
-                  delay: i * 0.5
+                  delay: i * 0.3
                 }}
                 className="absolute h-px w-64 bg-gradient-to-r from-transparent via-white to-transparent"
               />
@@ -47,7 +47,7 @@ export function AeroplaneLoader() {
                 rotate: [0, -2, 2, 0]
               }}
               transition={{
-                duration: 2,
+                duration: 1.5,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -56,7 +56,7 @@ export function AeroplaneLoader() {
               <motion.div
                 initial={{ x: -200, opacity: 0, scale: 0.5 }}
                 animate={{ x: 0, opacity: 1, scale: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <Plane className="w-20 h-20 text-[#FF7A00] rotate-45" strokeWidth={1.5} />
               </motion.div>
@@ -64,12 +64,12 @@ export function AeroplaneLoader() {
               {/* Speed Lines */}
               <motion.div 
                 animate={{ opacity: [0.2, 0.5, 0.2] }}
-                transition={{ duration: 0.5, repeat: Infinity }}
+                transition={{ duration: 0.4, repeat: Infinity }}
                 className="absolute -left-12 top-1/2 -translate-y-1/2 w-10 h-0.5 bg-[#FF7A00]/40 rounded-full"
               />
               <motion.div 
                 animate={{ opacity: [0, 0.3, 0] }}
-                transition={{ duration: 0.7, repeat: Infinity, delay: 0.2 }}
+                transition={{ duration: 0.5, repeat: Infinity, delay: 0.1 }}
                 className="absolute -left-16 top-1/4 -translate-y-1/2 w-8 h-0.5 bg-[#FF7A00]/30 rounded-full"
               />
             </motion.div>
@@ -78,7 +78,7 @@ export function AeroplaneLoader() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
               className="text-center"
             >
               <h2 className="text-white text-3xl font-black uppercase tracking-[0.3em] mb-2">
@@ -94,7 +94,7 @@ export function AeroplaneLoader() {
               <motion.div
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 3, ease: "easeInOut" }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
                 className="h-full bg-gradient-to-r from-[#FF7A00] to-[#FFA04D]"
               />
             </div>
