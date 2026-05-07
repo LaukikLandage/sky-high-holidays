@@ -1,10 +1,17 @@
 import { motion } from 'framer-motion';
+import { SEO } from '../components/seo/SEO';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 export default function PrivacyPolicy() {
   const lastUpdated = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
   return (
     <div className="min-h-screen bg-white pt-48 md:pt-56 pb-20 font-poppins">
+      <SEO 
+        title={PAGE_SEO.privacyPolicy.title}
+        description={PAGE_SEO.privacyPolicy.description}
+        canonicalUrl={PAGE_SEO.privacyPolicy.canonical}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

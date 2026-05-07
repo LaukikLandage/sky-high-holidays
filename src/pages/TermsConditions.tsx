@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
+import { SEO } from '../components/seo/SEO';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 export default function TermsConditions() {
   return (
     <div className="min-h-screen bg-white pt-48 md:pt-56 pb-20 font-poppins">
+      <SEO 
+        title={PAGE_SEO.termsConditions.title}
+        description={PAGE_SEO.termsConditions.description}
+        canonicalUrl={PAGE_SEO.termsConditions.canonical}
+      />
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

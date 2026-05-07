@@ -1,4 +1,14 @@
+# Sky High Holidays — robots.txt
+# https://skyhighholidays.vercel.app
+
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /design-system
 
+# Sitemap
 Sitemap: https://skyhighholidays.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, respected by some bots)
+# Crawl-delay: 1

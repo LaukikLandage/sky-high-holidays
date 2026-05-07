@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { DESTINATIONS, DOMESTIC_DESTINATIONS } from '@/lib/constants';
 import { DestinationCard } from '../components/ui/DestinationCard';
 import { SectionHeader } from '../components/ui/SectionHeader';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 export function DestinationsPage() {
   const [filter, setFilter] = useState<'all' | 'international' | 'domestic'>('all');
@@ -26,6 +29,14 @@ export function DestinationsPage() {
 
   return (
     <div className="pt-48 pb-24 min-h-screen bg-[#F9F9F9]">
+      <SEO 
+        title={PAGE_SEO.destinations.title}
+        description={PAGE_SEO.destinations.description}
+        canonicalUrl={PAGE_SEO.destinations.canonical}
+        keywords={PAGE_SEO.destinations.keywords}
+      />
+      <HiddenSEOKeywords type="international" />
+      <HiddenSEOKeywords type="domestic" />
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

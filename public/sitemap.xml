@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
   <url>
     <loc>https://skyhighholidays.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Core Pages -->
   <url>
     <loc>https://skyhighholidays.vercel.app/about</loc>
     <changefreq>monthly</changefreq>
@@ -16,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://skyhighholidays.vercel.app/destinations</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://skyhighholidays.vercel.app/enquiry</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -25,54 +35,78 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- International Destination Pages -->
   <url>
-    <loc>https://skyhighholidays.vercel.app/#international-packages</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://skyhighholidays.vercel.app/#domestic-packages</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/bali</loc>
+    <loc>https://skyhighholidays.vercel.app/international/the-maldives</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:title>Maldives Tour Packages — Sky High Holidays</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/dubai</loc>
+    <loc>https://skyhighholidays.vercel.app/international/dubai-uae</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://skyhighholidays.vercel.app/images/1_Destinations/International/Dubai/cover/dubai-cover.jpeg</image:loc>
+      <image:title>Dubai Tour Packages — Sky High Holidays</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/thailand</loc>
+    <loc>https://skyhighholidays.vercel.app/international/bali-indonesia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://skyhighholidays.vercel.app/images/1_Destinations/International/Bali/cover/bali-cover.jpeg</image:loc>
+      <image:title>Bali Tour Packages — Sky High Holidays</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/maldives</loc>
+    <loc>https://skyhighholidays.vercel.app/international/thailand</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://skyhighholidays.vercel.app/images/1_Destinations/International/Thailand/cover/thailand-cover.jpeg</image:loc>
+      <image:title>Thailand Tour Packages — Sky High Holidays</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/vietnam</loc>
+    <loc>https://skyhighholidays.vercel.app/international/vietnam</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:title>Vietnam Tour Packages — Sky High Holidays</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/singapore</loc>
+    <loc>https://skyhighholidays.vercel.app/international/singapore-malaysia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&amp;fit=crop&amp;q=80&amp;w=1200</image:loc>
+      <image:title>Singapore Malaysia Tour Packages — Sky High Holidays</image:title>
+    </image:image>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://skyhighholidays.vercel.app/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/kashmir</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://skyhighholidays.vercel.app/cancellation-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://skyhighholidays.vercel.app/destinations/goa</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://skyhighholidays.vercel.app/terms-conditions</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
+
 </urlset>

@@ -6,6 +6,7 @@ import { Button } from '../components/ui/Button';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { SEO } from '../components/seo/SEO';
 import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 export default function EnquiryPage() {
   const [searchParams] = useSearchParams();
@@ -39,10 +40,12 @@ export default function EnquiryPage() {
   return (
     <div className="relative pt-52 md:pt-60 pb-24 bg-[#F9FAFB] min-h-screen overflow-hidden">
       <SEO 
-        title={`Enquire Now | Sky High Holidays`} 
-        description={`Book your dream vacation with Sky High Holidays. Fill out our enquiry form for customized tour packages, international trips, and honeymoon packages.`}
+        title={PAGE_SEO.enquiry.title}
+        description={PAGE_SEO.enquiry.description}
+        canonicalUrl={PAGE_SEO.enquiry.canonical}
+        keywords={PAGE_SEO.enquiry.keywords}
       />
-      <HiddenSEOKeywords type="contact" />
+      <HiddenSEOKeywords type="enquiry" />
       {/* Background World Map Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-0 flex items-center justify-center overflow-hidden">
         <img 

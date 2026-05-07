@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Counter } from '../components/ui/Counter';
 import { SEO } from '../components/seo/SEO';
 import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 const stats = [
   { label: 'Happy Travelers', value: '1000+', icon: Users },
@@ -31,10 +32,12 @@ export default function AboutPage() {
   return (
     <div className="pt-36 pb-20">
       <SEO 
-        title="About Us | Sky High Holidays - Premium Travel Agency Pune" 
-        description="Learn about Sky High Holidays, a premium travel agency in Pune, India. Founded by Ashwin Nair, we craft extraordinary travel experiences with personalized itineraries and luxury stays."
+        title={PAGE_SEO.about.title}
+        description={PAGE_SEO.about.description}
+        canonicalUrl={PAGE_SEO.about.canonical}
+        keywords={PAGE_SEO.about.keywords}
       />
-      <HiddenSEOKeywords type="general" />
+      <HiddenSEOKeywords type="about" />
       {/* ... Hero Section ... */}
       <section className="relative pt-10 pb-24 lg:pt-16 lg:pb-32 overflow-hidden bg-white">
         <div className="absolute inset-0 bg-[#F9FAFB] -z-10" />
@@ -154,12 +157,12 @@ export default function AboutPage() {
               className="grid grid-cols-2 gap-4"
             >
               <div className="space-y-4">
-                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=600" alt="Travel" className="rounded-3xl h-64 w-full object-cover shadow-lg" />
-                <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=600" alt="Travel" className="rounded-3xl h-48 w-full object-cover shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&q=80&w=600" alt="Luxury beach resort holiday destination curated by Sky High Holidays" className="rounded-3xl h-64 w-full object-cover shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?auto=format&fit=crop&q=80&w=600" alt="Mountain adventure travel experience with Sky High Holidays India" className="rounded-3xl h-48 w-full object-cover shadow-lg" />
               </div>
               <div className="space-y-4 pt-12">
-                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600" alt="Travel" className="rounded-3xl h-48 w-full object-cover shadow-lg" />
-                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600" alt="Travel" className="rounded-3xl h-64 w-full object-cover shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=600" alt="Scenic lake and mountain landscape from international tour packages" className="rounded-3xl h-48 w-full object-cover shadow-lg" />
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=600" alt="Tropical beach destination honeymoon package from Sky High Holidays Pune" className="rounded-3xl h-64 w-full object-cover shadow-lg" />
               </div>
             </motion.div>
           </div>

@@ -13,6 +13,7 @@ import { useDestinationStore } from '@/store/useDestinationStore';
 import { ServiceMarquee } from '../components/sections/ServiceMarquee';
 import { SEO } from '../components/seo/SEO';
 import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
+import { getDestinationSEO, generateTouristDestinationSchema, generateOfferSchema } from '../lib/seoKeywords';
 
 // Reusable Accordion Component for Itinerary
 function AccordionItem({ day, title, content, isOpen, onClick }: { day: number, title: string, content: string, isOpen: boolean, onClick: () => void }) {
@@ -130,20 +131,47 @@ export function DestinationDetailPage() {
   return (
     <>
       <SEO 
-        title={`${destination.name} Tour Packages | Sky High Holidays`}
-        description={`Book the best ${destination.name} tour packages with Sky High Holidays. Explore ${destination.name} with luxury stays, custom itineraries, and expert travel planning from India.`}
-        schemaData={{
-          '@context': 'https://schema.org',
-          '@type': 'TouristTrip',
-          name: `${destination.name} Tour Package`,
-          description: `Explore ${destination.name} with Sky High Holidays premium tour packages.`,
-          touristType: 'Leisure',
-          provider: {
-            '@type': 'TravelAgency',
-            name: 'Sky High Holidays',
-            url: 'https://skyhighholidays.vercel.app'
-          }
-        }}
+        title={getDestinationSEO(destination.name, slug || '', destination.price, destination.duration).title}
+        description={getDestinationSEO(destination.name, slug || '', destination.price, destination.duration).description}
+        canonicalUrl={getDestinationSEO(destination.name, slug || '', destination.price, destination.duration).canonical}
+        keywords={getDestinationSEO(destination.name, slug || '', destination.price, destination.duration).keywords}
+        schemaData={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'TouristTrip',
+            name: `${destination.name} Tour Package`,
+            description: `Explore ${destination.name} with Sky High Holidays premium tour packages starting at ${destination.price}. ${destination.duration} of luxury stays and guided tours.`,
+            touristType: ['Leisure', 'Honeymoon', 'Family', 'Adventure'],
+            provider: {
+              '@type': 'TravelAgency',
+              name: 'Sky High Holidays',
+              url: 'https://skyhighholidays.vercel.app',
+            },
+          },
+          generateTouristDestinationSchema({
+            name: destination.name,
+            slug: slug || '',
+            location: destination.location,
+            price: destination.price,
+            duration: destination.duration,
+            image: destination.image,
+          }),
+          generateOfferSchema({
+            name: destination.name,
+            slug: slug || '',
+            price: destination.price,
+            duration: destination.duration,
+          }),
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://skyhighholidays.vercel.app/' },
+              { '@type': 'ListItem', position: 2, name: 'Destinations', item: 'https://skyhighholidays.vercel.app/destinations' },
+              { '@type': 'ListItem', position: 3, name: destination.name, item: `https://skyhighholidays.vercel.app/international/${slug}` },
+            ],
+          },
+        ]}
       />
       <HiddenSEOKeywords type="destination" destination={destination.name} />
       <div className="min-h-screen bg-[#F9FAFB] pt-48 font-poppins text-[#020617]">

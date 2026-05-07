@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { PlayCircle } from 'lucide-react';
 import { SectionHeader } from '../components/ui/SectionHeader';
 import { ServiceMarquee } from '../components/sections/ServiceMarquee';
+import { SEO } from '../components/seo/SEO';
+import { HiddenSEOKeywords } from '../components/seo/HiddenSEOKeywords';
+import { PAGE_SEO } from '../lib/seoKeywords';
 
 
 
@@ -13,14 +16,20 @@ export default function ReviewsPage() {
       videoId: "cpZDj9yHIvo",
       active: true,
     },
-    { id: 2, title: "Coming Soon", active: false },
+    { id: 2, title: "Guest Review", videoId: "B5CGE6Nspnw", active: true },
     { id: 3, title: "Coming Soon", active: false },
     { id: 4, title: "Coming Soon", active: false },
   ];
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] pt-52 md:pt-60 font-poppins text-[#020617] overflow-x-hidden">
-      
+      <SEO 
+        title={PAGE_SEO.reviews.title}
+        description={PAGE_SEO.reviews.description}
+        canonicalUrl={PAGE_SEO.reviews.canonical}
+        keywords={PAGE_SEO.reviews.keywords}
+      />
+      <HiddenSEOKeywords type="reviews" />
       {/* Page Header */}
       <div className="max-w-[1200px] mx-auto px-4 md:px-6 lg:px-8 mb-16 text-center">
         <SectionHeader 
