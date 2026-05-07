@@ -30,12 +30,11 @@ export function TrustSection() {
   return (
     <section className="py-12 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#020617] mb-6">
-            Trust & Recognition
-          </h2>
-          <div className="w-24 h-1.5 bg-[#FF7A00] rounded-full" />
-        </div>
+        <SectionHeader 
+          subtitle="TRUST & RECOGNITION"
+          title="Trusted Travel & Tourism Partner"
+          description="Discover trusted domestic and international tour packages with verified customer reviews, top-rated travel services, and memorable holiday experiences across India and worldwide."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {trustItems.map((item, i) => (
