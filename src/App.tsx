@@ -21,9 +21,24 @@ const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.N
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+  
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior });
+    // Disable browser's automatic scroll restoration to prevent fighting with our manual scroll
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    // Immediate scroll to top
+    window.scrollTo(0, 0);
+
+    // Fallback scroll to top after a tiny delay to handle async layout shifts or browser quirks
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
+
+    return () => clearTimeout(timer);
   }, [pathname]);
+
   return null;
 }
 
