@@ -28,13 +28,13 @@ export function TrustSection() {
   ];
 
   return (
-    <section className="py-8 bg-gray-50 border-y border-gray-100">
+    <section className="py-12 bg-gray-50 border-y border-gray-100">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-10">
-          <p className="text-lg max-w-3xl mx-auto font-medium leading-relaxed text-gray-500">
-            Discover trusted domestic and international tour packages with verified customer reviews, top-rated travel services, and memorable holiday experiences across India and worldwide.
-          </p>
-        </div>
+        <SectionHeader 
+          subtitle="TRUST & RECOGNITION"
+          title="Trusted Travel & Tourism Partner"
+          description="Discover trusted domestic and international tour packages with verified customer reviews, top-rated travel services, and memorable holiday experiences across India and worldwide."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {trustItems.map((item, i) => (
